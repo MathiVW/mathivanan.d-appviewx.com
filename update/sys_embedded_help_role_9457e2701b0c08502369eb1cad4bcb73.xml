@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_avx_appviewx_aut.generate_workflow_request_user" name="x_avx_appviewx_aut.generate_workflow_request_user">1857e2701b0c08502369eb1cad4bcb71</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-20 07:04:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9457e2701b0c08502369eb1cad4bcb73</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1857e2701b0c08502369eb1cad4bcb71</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_embedded_help_role_9457e2701b0c08502369eb1cad4bcb73</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-20 07:04:56</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

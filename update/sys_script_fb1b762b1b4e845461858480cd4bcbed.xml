@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">cat_item=81db83bc1bf5c0d02369eb1cad4bcbc6^EQ<item display_table="sc_cat_item" display_value="Infoblox - Create DNS Records" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="81db83bc1bf5c0d02369eb1cad4bcbc6"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>appviewx_sc_infoblox_record_creation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var dns_name = current.hierarchical_variables.dns_name;
+			var ip = current.hierarchical_variables.free_ip;
+			var zone = current.hierarchical_variables.enter_zone;
+			var record_type = current.hierarchical_variables.record_type;
+			var device = current.hierarchical_variables.device;
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+":5300/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload = "{\n\t\"payload\": {\n\t\t\"data\": {\n\t\t\t\"input\": {\n\t\t\t\t\"requestData\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"sequenceNo\": 1,\n\t\t\t\t\t\t\"scenario\": \"scenario\",\n\t\t\t\t\t\t\"fieldInfo\": {\n\t\t\t\t\t\t\t\"ip\": \"" + ip + "\",\n\t\t\t\t\t\t\t\"record_type\": \"\",\n\t\t\t\t\t\t\t\"dns_name\": \" " + dns_name + "\",\n\t\t\t\t\t\t\t\"device_name\": \"" + device + "\",\n\t\t\t\t\t\t\t\"wapi\": \"2.2.2\",\n\t\t\t\t\t\t\t\"ip_version\": \"Enter IP\",\n\t\t\t\t\t\t\t\"zone\": \"" + zone + "\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"task_action\": 1\n\t\t},\n\t\t\"header\": {\n\t\t\t\"workflowName\": \"Manage DNS Records\"\n\t\t}\n\t}\n}";
+			r.setRequestBody(payload);
+			r.setHttpTimeout(100);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_sc_infoblox_record_creation';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for catalog request with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						gr.level = 'Error';
+						gr.script = 'appviewx_sc_infoblox_record_creation';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+			
+				}
+			else 
+				{
+					responseBody = response.getBody();
+						gr.level = 'Info';
+						gr.script = 'appviewx_sc_infoblox_record_creation';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+					current.variables.request_response = responseBody;
+					current.update();
+			
+					
+				}
+				
+			}		
+)(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-06 07:54:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>fb1b762b1b4e845461858480cd4bcbed</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>appviewx_sc_infoblox_record_creation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_fb1b762b1b4e845461858480cd4bcbed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-10 08:58:54</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+</record_update>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="New Certificate Request" max_length="40" name="x_avx_appviewx_aut_new_certificate_request" type="collection">
+        <element hint="This field will show the response from the AppViewX for new certificate request submission." label="AppViewX Response" max_length="300" name="appviewx_response" read_only="true" type="string"/>
+        <element choice="3" default="AppViewX" hint="Select the Certificate Authority name from the list" label="Certificate Authority" mandatory="true" max_length="40" name="certificate_authority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="AppViewX" sequence="0" value="AppViewX"/>
+                <element inactive="true" inactive_on_update="true" label="Microsoft Standalone" sequence="0" value="Microsoft Standalone"/>
+                <element inactive_on_update="false" label="DigiCert" sequence="1" value="DigiCert"/>
+                <element inactive_on_update="false" label="Microsoft Enterprise" sequence="2" value="Microsoft Enterprise"/>
+            </choice>
+        </element>
+        <element choice="3" default="SSL Plus" hint="Select the type of certificate to be created." label="Certificate Type" mandatory="true" max_length="40" name="certificate_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="SSL Plus" sequence="0" value="SSL Plus"/>
+                <element inactive_on_update="false" label="SSL Multi Domain" sequence="1" value="SSL Multi Domain"/>
+                <element inactive_on_update="false" label="SSL Wildcart" sequence="2" value="SSL Wildcart"/>
+                <element inactive_on_update="false" label="SSL EV Plus" sequence="3" value="SSL EV Plus"/>
+            </choice>
+        </element>
+        <element hint="Enter a valid Comman Name. Eg: www.appviewx.com" label="Common Name" mandatory="true" max_length="40" name="common_name" type="string"/>
+        <element hint="Enter a valid email address. Eg:abc@gmail.com" label="Email ID" mandatory="true" max_length="40" name="email_id" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element hint="This field will show the Request ID generated in the AppViewX" label="Request ID" max_length="40" name="request_id" read_only="true" type="string"/>
+        <element choice="3" default="new" label="State" max_length="40" name="state" read_only="true" type="string">
+            <choice>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+            </choice>
+        </element>
+        <element hint="Enter a valid Subject Alternative Name (SAN). Eg: www.apvx.com" label="SAN" mandatory="true" max_length="40" name="subject_alternative_name" type="string"/>
+    </element>
+</database>

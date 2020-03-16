@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_avx_appviewx_aut_x_avx_appviewx_generate_workflow_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>appviewx_NaaS</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+":5300/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload = current.payload;
+			r.setRequestBody(payload);
+			r.setHttpTimeout(100);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_NaaS';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for NaaS with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Error';
+						gr.script = 'appviewx_NaaS';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+					responseBody = JSON.parse(responseBody);
+					current.appviewx_request_id = "Failed to submit workflow request";
+					current.appviewx_rersponse = responseBody["message"];
+					current.update();
+				}
+			else 
+				{
+					responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Info';
+						gr.script = 'appviewx_NaaS';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+					responseBody = JSON.parse(responseBody);
+					var avx_id = responseBody["response"]["requestId"];	
+					var message = responseBody['response']["message"];
+					current.appviewx_request_id = "R"+ avx_id;
+					current.appviewx_rersponse = message;
+					current.update();
+				}
+				
+			}		
+)(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-27 04:56:52</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>3a9b4e031b00449061858480cd4bcb0c</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>appviewx_NaaS</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_3a9b4e031b00449061858480cd4bcb0c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-09 11:44:09</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+</record_update>

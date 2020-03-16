@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2020-03-16 07:49:37">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout display_value="layout_2_across">f6defafa0a0a0b12000d5016bd12ff06</layout>
+        <order>3010</order>
+        <read_roles>x_avx_appviewx_aut.admin,admin</read_roles>
+        <roles>x_avx_appviewx_aut.admin,admin</roles>
+        <selectable>true</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-09 09:01:19</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>af6ae66c1bdec85461858480cd4bcb5a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>catalog_AppViewX_Catalog</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_portal_page_af6ae66c1bdec85461858480cd4bcb5a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-09 13:40:20</sys_updated_on>
+        <title>catalog_AppViewX_Catalog</title>
+        <user/>
+        <view>catalog_AppViewX_Catalog</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>2</offset>
+                <page display_value="catalog_AppViewX_Catalog">af6ae66c1bdec85461858480cd4bcb5a</page>
+                <summary/>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                <sys_id>2d7a6a6c1bdec85461858480cd4bcb4d</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>217a6a6c1bdec85461858480cd4bcb4f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>2eb4c0301be1885061858480cd4bcb52</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>macro</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>257a6a6c1bdec85461858480cd4bcb4e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>sc_catalog_homepage_category_list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link_class</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>257a6a6c1bdec85461858480cd4bcb4f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category_title_link</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>297a6a6c1bdec85461858480cd4bcb4e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog.RenderCategory</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>297a6a6c1bdec85461858480cd4bcb4f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog_category_view.do?v=1&amp;amp;sysparm_parent=9ffe26f81b75c0d02369eb1cad4bcb4d&amp;amp;sysparm_catalog=2eb4c0301be1885061858480cd4bcb52&amp;amp;sysparm_catalog_view=catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>render_title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>2d7a6a6c1bdec85461858480cd4bcb4e</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>2d7a6a6c1bdec85461858480cd4bcb4f</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>Application Delivery Automation</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>type</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>a17a6a6c1bdec85461858480cd4bcb50</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog_view</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>a57a6a6c1bdec85461858480cd4bcb50</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>a97a6a6c1bdec85461858480cd4bcb50</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">2d7a6a6c1bdec85461858480cd4bcb4d</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>ad7a6a6c1bdec85461858480cd4bcb4d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>9ffe26f81b75c0d02369eb1cad4bcb4d</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>1</offset>
+                <page display_value="catalog_AppViewX_Catalog">af6ae66c1bdec85461858480cd4bcb5a</page>
+                <summary/>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                <sys_id>697a6a6c1bdec85461858480cd4bcb4a</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>macro</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>617a6a6c1bdec85461858480cd4bcb4b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>sc_catalog_homepage_category_list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link_class</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>617a6a6c1bdec85461858480cd4bcb4c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category_title_link</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>657a6a6c1bdec85461858480cd4bcb4b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog.RenderCategory</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>657a6a6c1bdec85461858480cd4bcb4c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog_category_view.do?v=1&amp;amp;sysparm_parent=506fa6b81b75c0d02369eb1cad4bcb70&amp;amp;sysparm_catalog=2eb4c0301be1885061858480cd4bcb52&amp;amp;sysparm_catalog_view=catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>render_title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>697a6a6c1bdec85461858480cd4bcb4b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>697a6a6c1bdec85461858480cd4bcb4c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>Certificate Automation</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>6d7a6a6c1bdec85461858480cd4bcb4b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>2eb4c0301be1885061858480cd4bcb52</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog_view</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>e17a6a6c1bdec85461858480cd4bcb4d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>e57a6a6c1bdec85461858480cd4bcb4d</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>e97a6a6c1bdec85461858480cd4bcb4a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>506fa6b81b75c0d02369eb1cad4bcb70</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>type</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697a6a6c1bdec85461858480cd4bcb4a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>ed7a6a6c1bdec85461858480cd4bcb4c</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone>dropzone0</dropzone>
+                <offset>0</offset>
+                <page display_value="catalog_AppViewX_Catalog">af6ae66c1bdec85461858480cd4bcb5a</page>
+                <summary/>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                <sys_id>697ae66c1bdec85461858480cd4bcbf7</sys_id>
+                <sys_mod_count>0</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog_view</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>217a6a6c1bdec85461858480cd4bcb4a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>current_page</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>257a6a6c1bdec85461858480cd4bcb4a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value/>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>type</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>2d7a6a6c1bdec85461858480cd4bcb49</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>macro</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>617ae66c1bdec85461858480cd4bcbf8</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>sc_catalog_homepage_category_list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link_class</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>617ae66c1bdec85461858480cd4bcbf9</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>category_title_link</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>657ae66c1bdec85461858480cd4bcbf8</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog.RenderCategory</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>render_title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>697ae66c1bdec85461858480cd4bcbf8</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>catalog</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>6d7ae66c1bdec85461858480cd4bcbf8</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>2eb4c0301be1885061858480cd4bcb52</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_link</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>a17a6a6c1bdec85461858480cd4bcb49</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>com.glideapp.servicecatalog_category_view.do?v=1&amp;amp;sysparm_parent=ff3f62b81b75c0d02369eb1cad4bcbfc&amp;amp;sysparm_catalog=2eb4c0301be1885061858480cd4bcb52&amp;amp;sysparm_catalog_view=catalog_AppViewX_Catalog</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>a57a6a6c1bdec85461858480cd4bcb49</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>DNS-IPAM Automation</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2020-01-09 14:31:27">697ae66c1bdec85461858480cd4bcbf7</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2020-01-09 09:01:27</sys_created_on>
+                        <sys_id>e97ae66c1bdec85461858480cd4bcbf7</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2020-01-09 09:01:27</sys_updated_on>
+                        <value>ff3f62b81b75c0d02369eb1cad4bcbfc</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices>1024,2048,4096</choices>
+        <description>Bit Length</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_avx_appviewx_aut.msetps_bitlength</name>
+        <read_roles/>
+        <suffix>msetps_bitlength</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-12-12 05:20:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a22b25a71b69489061858480cd4bcbf7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut.msetps_bitlength</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_properties_a22b25a71b69489061858480cd4bcbf7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-25 08:55:08</sys_updated_on>
+        <type>choicelist</type>
+        <value>4096</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=a22b25a71b69489061858480cd4bcbf7"/>
+</record_update>

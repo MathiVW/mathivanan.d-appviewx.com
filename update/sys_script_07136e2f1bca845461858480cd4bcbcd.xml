@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">cat_item=9a6b0bf01b39c0d02369eb1cad4bcb89^EQ<item display_table="sc_cat_item" display_value="Create virtual server in BIG-IP LTM" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="9a6b0bf01b39c0d02369eb1cad4bcb89"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>appviewx_sc_create_virtual_server_bigip</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var device = current.hierarchical_variables.device;
+			var ip = current.hierarchical_variables.vip_ip;
+			var name = current.hierarchical_variables.vip_name;
+			var port = current.hierarchical_variables.vip_port;
+			var pool_name = current.hierarchical_variables.pool_name;
+			var pool_member_ip = current.hierarchical_variables.pool_member_ip;
+			var pool_member_port = current.hierarchical_variables.pool_member_port;
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+":5300/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload = "{\r\n  \"payload\": {\r\n    \"data\": {\r\n      \"input\": {\r\n        \"requestData\": [\r\n          {\r\n            \"sequenceNo\": 1,\r\n            \"scenario\": \"scenario\",\r\n            \"fieldInfo\": {\r\n              \"txt_vip_name\": \" " + name + " \",\r\n              \"dd_device\": \"" + device + "\",\r\n              \"txt_vip_ip\": \"" + ip + "\",\r\n\t\t\t  \"txt_vip_port\": \"" + port + "\",\r\n\t\t\t  \"txt_pool_name\": \"\",\r\n\t          \"txt_pool_member_ip\": \"\",\r\n\t          \"txt_pool_member_port\": \"\",\r\n\t          \"tab_snat_pool\": [],\r\n              \"tab_pool_members\": [\r\n\t              \t{\r\n\t              \t\t\"txt_pool_name\": \"" + pool_name + "\",\r\n\t            \t\t\"txt_pool_member_ip\": \"" + pool_member_ip + "\",\r\n\t            \t\t\"txt_pool_member_port\": \"" + pool_member_port + "\"\r\n\t              \t}\r\n              \t],\r\n              \"dd_create_monitor\": \"No\",\r\n              \"dd_snat_opt\": \"None\",\r\n              \"dd_server_ssl_opt\": \"None\",\r\n              \"dd_http_profile_opt\": \"None\",\r\n              \"dd_lb_method\": \"round-robin\",\r\n              \"dd_persistence_opt\": \"None\",\r\n              \"dd_client_ssl_opt\": \"None\"\r\n            }\r\n          }\r\n        ]\r\n      },\r\n      \"task_action\": 1\r\n    },\r\n    \"header\": {\r\n      \"workflowName\": \"Create Virtual Server\"\r\n    }\r\n  }\r\n}";
+			r.setRequestBody(payload);
+			r.setHttpTimeout(100);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_sc_create_virtual_server_bigip';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for catalog request with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Error';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+
+				}
+			else 
+				{
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Info';
+
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+				}
+				
+			}		
+)(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-06 06:16:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>07136e2f1bca845461858480cd4bcbcd</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>appviewx_sc_create_virtual_server_bigip</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_07136e2f1bca845461858480cd4bcbcd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-10 09:03:40</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+</record_update>

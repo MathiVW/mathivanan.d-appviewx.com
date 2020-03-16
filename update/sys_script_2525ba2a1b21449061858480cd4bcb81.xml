@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_avx_appviewx_aut_new_certificate_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_avx_appviewx_aut_new_certificate_request">state=approved^EQ<item endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="approved"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>new_certificate_request</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+	var r = new sn_ws.RESTMessageV2();
+	var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+	var username = gs.getProperty("x_avx_appviewx_aut.Username");
+	var password = gs.getProperty("x_avx_appviewx_aut.Password");
+	var sys_id = current.sys_id;
+	var id = current.number;
+	var cn = current.common_name;
+	var san = current.subject_alternative_name;
+	var email = current.email_id;
+	var ca = current.certificate_authority;
+	var bit_length,settingName,hash,key,validity,payload;
+	var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'new_certificate_request';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring new certificate request API for request with number ' + current.number;
+				gr.insert();
+				gr.message = 'Payload Details \n' +  'Common Name - ' + cn + '\n SAN -' + san + '\n Email - '+ email + '\n CA - '+ ca;
+				gr.insert();
+				
+	
+	if (ca == "AppViewX") 
+	{
+			  payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\"Default\"},\"caConnectorInfo\":{\"certificateAuthority\":\"AppViewX\",\"caSettingName\":\"AppViewX CA\",\"certificateType\":\"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\"SHA160\",\"keyType\":\"RSA\",\"bitLength\":\"4096\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":365,\"vendorSpecificDetails\":{}}}";
+			  gr.message = 'Generated Payload \n ' + payload;
+			  gr.insert();
+	}
+	
+	else if (ca == "DigiCert") 
+	{
+		bit_length = gs.getProperty("x_avx_appviewx_aut.digi_bitlength");
+		settingName = gs.getProperty("x_avx_appviewx_aut.digi_ca_settingName");
+		hash = gs.getProperty("x_avx_appviewx_aut.digi_hash");
+		key = gs.getProperty("x_avx_appviewx_aut.digi_key");
+		validity = gs.getProperty("x_avx_appviewx_aut.digi_validity");
+		var divisionId = gs.getProperty("x_avx_appviewx_aut.digi_division");
+		var certtype = current.certificate_type;
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\"Default\"},\"caConnectorInfo\":{\"certificateAuthority\":\"DigiCert\",\"divisionId\":\""+divisionId+"\",\"caSettingName\":\""+settingName+"\",\"certificateType\":\""+certtype+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{}}}";
+		gr.message = 'Generated Payload \n ' + payload;
+		gr.insert();
+	}
+	
+	else if (ca == "Microsoft Enterprise") 
+	{
+		bit_length = gs.getProperty("x_avx_appviewx_aut.msetps_bitlength");
+		settingName = gs.getProperty("x_avx_appviewx_aut.msetps_ca_settingName");
+		hash = gs.getProperty("x_avx_appviewx_aut.msetps_hash");
+		key = gs.getProperty("x_avx_appviewx_aut.msetps_key");
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\"Default\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Microsoft Enterprise\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":365,\"vendorSpecificDetails\":{}}}";
+		gr.message = 'Generated Payload \n ' + payload;
+		gr.insert();
+	}
+		
+	if (ca == "AppViewX" || ca == "DigiCert" || ca == "Microsoft Enterprise") 
+	{
+		r.setHttpMethod("post");
+		r.setRequestHeader("username", username);
+		r.setRequestHeader("password", password);
+		r.setRequestHeader("Content-Type", "application/json");
+		r.setEndpoint(url+":5300/avxapi/certificate/create?gwkey=f000ca01&gwsource=web");
+		r.setRequestBody(payload);
+		r.setHttpTimeout(10000);
+		var response = r.executeAsync();
+		var responseBody,responseMessage;
+		if (response.haveError())
+			{
+				responseMessage = response.getErrorMessage();
+				responseBody = response.getBody();
+				gr.level = 'Error';
+				gr.script = 'new_certificate_request';
+				gr.application = 'AppViewX';
+				gr.message = 'Response for request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage;
+				gr.insert();
+				responseBody = JSON.parse(responseBody);
+				current.request_id = "Failed to submit certificate request";
+				current.appviewx_response = responseBody["message"];
+				current.update();
+			}
+		else 
+			{
+				responseBody = response.getBody();
+				gr.level = 'Info';
+				gr.script = 'new_certificate_request';
+				gr.application = 'AppViewX';
+				gr.message = 'Response for request with number ' + current.number + '\n ' + responseBody;
+				gr.insert();
+				responseBody = JSON.parse(responseBody);
+				var avx_id = responseBody["response"]["requestId"];	
+				var resource_id = responseBody["response"]["resourceId"];	
+				var message = responseBody["message"];
+				current.request_id = "R"+ avx_id +":"+resource_id;
+				current.appviewx_response = message;
+				current.update();
+			}
+			
+	}
+	else {
+		current.appviewx_reponse = "Invalid Input Details. Try creating a new request";
+				gr.level = 'Error';
+				gr.script = 'new_certificate_request';
+				gr.application = 'AppViewX';
+				gr.message = 'Response for request with number ' + current.number + '\n ' + 'Invalid input details provided.';
+		current.update();
+	}
+})(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-12-09 09:24:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>2525ba2a1b21449061858480cd4bcb81</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>new_certificate_request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_2525ba2a1b21449061858480cd4bcb81</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-09 11:47:21</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+</record_update>

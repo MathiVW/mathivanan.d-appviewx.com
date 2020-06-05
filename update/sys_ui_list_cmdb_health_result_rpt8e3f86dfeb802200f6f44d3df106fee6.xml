@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="cmdb_health_result" version="2" view="RPT8e3f86dfeb802200f6f44d3df106fee6">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>ci</element>
+            <list_id display_value="cmdb_health_result" element="NULL" name="cmdb_health_result" parent="NULL" relationship="NULL" sys_domain="global" view="d21957570fe91b00c3e6cd8ce1050ee3">7c3e450b1b3b081061858480cd4bcb70</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_id>cd3e450b1b3b081061858480cd4bcb72</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>task</element>
+            <list_id display_value="cmdb_health_result" element="NULL" name="cmdb_health_result" parent="NULL" relationship="NULL" sys_domain="global" view="d21957570fe91b00c3e6cd8ce1050ee3">7c3e450b1b3b081061858480cd4bcb70</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_id>c53e450b1b3b081061858480cd4bcb73</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>class_name</element>
+            <list_id display_value="cmdb_health_result" element="NULL" name="cmdb_health_result" parent="NULL" relationship="NULL" sys_domain="global" view="d21957570fe91b00c3e6cd8ce1050ee3">7c3e450b1b3b081061858480cd4bcb70</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_id>493e450b1b3b081061858480cd4bcb73</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>metric</element>
+            <list_id display_value="cmdb_health_result" element="NULL" name="cmdb_health_result" parent="NULL" relationship="NULL" sys_domain="global" view="d21957570fe91b00c3e6cd8ce1050ee3">7c3e450b1b3b081061858480cd4bcb70</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_id>c93e450b1b3b081061858480cd4bcb73</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>source</element>
+            <list_id display_value="cmdb_health_result" element="NULL" name="cmdb_health_result" parent="NULL" relationship="NULL" sys_domain="global" view="d21957570fe91b00c3e6cd8ce1050ee3">7c3e450b1b3b081061858480cd4bcb70</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_id>4d3e450b1b3b081061858480cd4bcb73</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>cmdb_health_result</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-31 10:17:22</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>7c3e450b1b3b081061858480cd4bcb70</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cmdb_health_result</sys_name>
+            <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+            <sys_update_name>sys_ui_list_cmdb_health_result_RPT8e3f86dfeb802200f6f44d3df106fee6</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-31 10:17:22</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rpt8e3f86dfeb802200f6f44d3df106fee6" name="RPT8e3f86dfeb802200f6f44d3df106fee6">d21957570fe91b00c3e6cd8ce1050ee3</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

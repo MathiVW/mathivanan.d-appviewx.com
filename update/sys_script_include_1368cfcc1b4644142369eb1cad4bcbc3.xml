@@ -3,6 +3,7 @@
         <access>package_private</access>
         <active>true</active>
         <api_name>x_avx_appviewx_aut.appviewx_test_connection</api_name>
+        <caller_access/>
         <client_callable>false</client_callable>
         <description/>
         <name>appviewx_test_connection</name>

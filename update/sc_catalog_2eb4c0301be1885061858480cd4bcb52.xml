@@ -32,17 +32,18 @@
         <compressed>true</compressed>
         <content_type>image/png</content_type>
         <file_name>desktop_image</file_name>
+        <hash/>
         <image_height>105</image_height>
         <image_width>105</image_width>
         <size_bytes>2047</size_bytes>
         <size_compressed>2037</size_compressed>
-        <state/>
+        <state>available</state>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-12-16 07:32:37</sys_created_on>
         <sys_id>0aff2af81b75c0d02369eb1cad4bcb62</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-16 07:32:37</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>guest</sys_updated_by>
+        <sys_updated_on>2020-05-04 10:51:20</sys_updated_on>
         <table_name>ZZ_YYsc_catalog</table_name>
         <table_sys_id>2eb4c0301be1885061858480cd4bcb52</table_sys_id>
     </sys_attachment>

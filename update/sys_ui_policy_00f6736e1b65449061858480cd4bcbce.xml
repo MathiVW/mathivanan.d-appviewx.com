@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
         <active>true</active>
-        <conditions table="x_avx_appviewx_aut_new_certificate_request">certificate_authority=DigiCert^EQ<item endquery="false" field="certificate_authority" goto="false" newquery="false" operator="=" or="false" value="DigiCert"/>
+        <conditions table="x_avx_appviewx_aut_new_certificate_request">certificate_authority=DigiCert^EQ<item display_value="DigiCert" endquery="false" field="certificate_authority" goto="false" newquery="false" operator="=" or="false" value="DigiCert"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </conditions>
         <description/>

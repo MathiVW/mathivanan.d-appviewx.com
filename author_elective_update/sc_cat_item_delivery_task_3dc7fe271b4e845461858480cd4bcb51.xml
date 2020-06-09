@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_delivery_task">
+    <sc_cat_item_delivery_task action="DELETE">
+        <assigned_to/>
+        <condition/>
+        <condition_script/>
+        <delivery_plan display_value="AppViewX Catalog Item">5997fa271b4e845461858480cd4bcb90</delivery_plan>
+        <delivery_time>1970-01-04 00:00:00</delivery_time>
+        <generation_script/>
+        <group/>
+        <instructions/>
+        <name>AppViewX Processing Stage</name>
+        <order>100</order>
+        <short_description/>
+        <sla/>
+        <sys_class_name>sc_cat_item_delivery_task</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-06 07:26:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3dc7fe271b4e845461858480cd4bcb51</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AppViewX Processing Stage</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sc_cat_item_delivery_task_3dc7fe271b4e845461858480cd4bcb51</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-09 08:02:48</sys_updated_on>
+        <work_notes>Request submission details in AppViewX can be reviewed.</work_notes>
+    </sc_cat_item_delivery_task>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sc_cat_item_delivery_task_3dc7fe271b4e845461858480cd4bcb51</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_delivery_task"><sc_cat_item_delivery_task action="INSERT_OR_UPDATE"><assigned_to/><condition/><condition_script/><delivery_plan display_value="AppViewX Catalog Item">5997fa271b4e845461858480cd4bcb90</delivery_plan><delivery_time>1970-01-04 00:00:00</delivery_time><generation_script/><group/><instructions/><name>AppViewX Processing Stage</name><order>100</order><short_description/><sla/><sys_class_name>sc_cat_item_delivery_task</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-01-06 07:26:59</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>3dc7fe271b4e845461858480cd4bcb51</sys_id><sys_mod_count>1</sys_mod_count><sys_name>AppViewX Processing Stage</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_update_name>sc_cat_item_delivery_task_3dc7fe271b4e845461858480cd4bcb51</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-06-09 08:02:48</sys_updated_on><work_notes>Request submission details in AppViewX can be reviewed.</work_notes></sc_cat_item_delivery_task></record_update>]]></payload>
+        <payload_hash>734487546</payload_hash>
+        <record_name>AppViewX Processing Stage</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-09 08:02:49</sys_created_on>
+        <sys_id>20bec9651b19945061858480cd4bcbad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>172981a70240000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-09 08:02:49</sys_updated_on>
+        <type>Execution Plan Task</type>
+        <update_guid>e4bec9658f199450ede8bb5c09c25bac</update_guid>
+        <update_guid_history>e4bec9658f199450ede8bb5c09c25bac:734487546,64183a277d4e8454bf6fdc7e479c1f4f:1318071156</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 2020-06-09 13:34:50">0e2f41a51b19945061858480cd4bcb0c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-09 08:04:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sc_cat_item_delivery_task">sc_cat_item_delivery_task</sys_db_object>
+        <sys_id>c0cc8c9e957b41e0b6103220ae04fc40</sys_id>
+        <sys_metadata>3dc7fe271b4e845461858480cd4bcb51</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AppViewX Processing Stage</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent display_value="AppViewX Catalog Item">5997fa271b4e845461858480cd4bcb90</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sc_cat_item_delivery_task_3dc7fe271b4e845461858480cd4bcb51</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_delivery_task_3dc7fe271b4e845461858480cd4bcb51">20bec9651b19945061858480cd4bcbad</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-09 08:04:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

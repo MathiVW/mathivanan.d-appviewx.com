@@ -6,7 +6,7 @@
         <sys_created_on>2019-10-31 07:41:03</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6f273d8e1bb08c9061858480cd4bcb15</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>Contact Support</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
@@ -14,10 +14,10 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_properties_category_6f273d8e1bb08c9061858480cd4bcb15</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-12 06:30:41</sys_updated_on>
+        <sys_updated_on>2020-05-14 04:46:36</sys_updated_on>
         <title><![CDATA[<p><span style="font-size: 14pt; font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Support Portal</strong></span></p>
-<p><span style="text-decoration: underline; font-size: 12pt; font-family: arial, helvetica, sans-serif; color: #000000;">https://helpcenter.appviewx.com</span></p>
-<p><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif; color: #000000;"> </span></p>
+<p><span style="font-size: 14pt; font-family: arial, helvetica, sans-serif; color: #000000;"><strong><span style="text-decoration: underline; font-size: 12pt; font-family: arial, helvetica, sans-serif; color: #000000;"><a title="https://helpcenter.appviewx.com" href="https://helpcenter.appviewx.com" target="_blank" rel="noopener noreferrer nofollow">https://helpcenter.appviewx.com</a></span> </strong></span></p>
+<p> </p>
 <p><span style="font-size: 14pt; font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Contact Details</strong></span></p>
 <p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong><span style="font-size: 12pt;"><span style="box-sizing: border-box; text-decoration: underline;">For Information</span></span></strong></span></p>
 <p><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; color: #000000;">TELEPHONE   -    &#43;1 212 400 7541,    &#43;1 212 951 1146</span></p>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" label="New Certificate Request" max_length="40" name="x_avx_appviewx_aut_new_certificate_request" sizeclass="152" type="collection">
+    <element audit="true" label="New Certificate Request" max_length="40" name="x_avx_appviewx_aut_new_certificate_request" sizeclass="153" type="collection">
         <element hint="This field will show the response from the AppViewX for new certificate request submission." label="AppViewX Response" max_length="300" name="appviewx_response" read_only="true" type="string"/>
         <element choice="3" default="AppViewX" hint="Select the Certificate Authority name from the list" label="Certificate Authority" mandatory="true" max_length="40" name="certificate_authority" type="string">
             <choice>

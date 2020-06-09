@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Firewall Create">582b50c61b2c50102369eb1cad4bcb0f</sc_cat_item>
+        <sc_catalog display_value="Firewall POC">90aa90861b2c50102369eb1cad4bcb72</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-04 10:47:45</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3d3bdc861b2c50102369eb1cad4bcbb6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Firewall POC.Firewall Create</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_3d3bdc861b2c50102369eb1cad4bcbb6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-04 10:47:45</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>

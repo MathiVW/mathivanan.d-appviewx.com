@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_avx_appviewx_aut_Pages.do</endpoint>
+        <html><![CDATA[<iframe name="myFrame" width="2000" height="2000"></iframe>   <!-- created my blank frame here -->
+
+<span>
+
+<a class="jive-link-external-big" href="https://vw-demo.appviewx.com:5004/appviewx/app#pages/apps/11477df7231c4f7f8fa09f3246e42592/AppViewX" target="_PARENT"> Click here</a>  
+
+</span>]]></html>
+        <name>Pages</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-14 06:18:41</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1f6d94e71b84509061858480cd4bcbdb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Pages</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_page_1f6d94e71b84509061858480cd4bcbdb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-14 06:32:10</sys_updated_on>
+    </sys_ui_page>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_ui_page_1f6d94e71b84509061858480cd4bcbdb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint&gt;x_avx_appviewx_aut_Pages.do&lt;/endpoint&gt;&lt;html&gt;&lt;![CDATA[&lt;iframe name="myFrame" width="2000" height="2000"&gt;&lt;/iframe&gt;   &lt;!-- created my blank frame here --&gt;
+
+&lt;span&gt;
+
+&lt;a class="jive-link-external-big" href="https://vw-demo.appviewx.com:5004/appviewx/app#pages/apps/11477df7231c4f7f8fa09f3246e42592/AppViewX" target="_PARENT"&gt; Click here&lt;/a&gt;  
+
+&lt;/span&gt;]]&gt;&lt;/html&gt;&lt;name&gt;Pages&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-04-14 06:18:41&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;1f6d94e71b84509061858480cd4bcbdb&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Pages&lt;/sys_name&gt;&lt;sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="AppViewX Automation+"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_1f6d94e71b84509061858480cd4bcbdb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-04-14 06:32:10&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1329325036</payload_hash>
+        <record_name>Pages</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-14 06:32:11</sys_created_on>
+        <sys_id>3ee0a82f1b84509061858480cd4bcb08</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171776356060000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-14 06:32:11</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>b2e0a82f0d845090f7a82ab1b6713b08</update_guid>
+        <update_guid_history>b2e0a82f0d845090f7a82ab1b6713b08:-1329325036,8160682b9984509025d0f076c5d09981:384377788,944e182bc5845090eb9730ebfb92f635:-128582948,51dd58a75784509044d240821ab38cc7:1621217102</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-09 04:20:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>c1bc0eb92d8643af953c351226db1a69</sys_id>
+        <sys_metadata>1f6d94e71b84509061858480cd4bcbdb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pages</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_ui_page_1f6d94e71b84509061858480cd4bcbdb</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_1f6d94e71b84509061858480cd4bcbdb">3ee0a82f1b84509061858480cd4bcb08</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-09 04:20:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

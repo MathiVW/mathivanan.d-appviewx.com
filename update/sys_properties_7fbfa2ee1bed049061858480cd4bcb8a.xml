@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
-        <choices>RSA</choices>
+        <choices/>
         <description>Certificate Key Type</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
@@ -12,7 +12,7 @@
         <sys_created_on>2019-12-09 07:45:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7fbfa2ee1bed049061858480cd4bcb8a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>x_avx_appviewx_aut.digi_key</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
@@ -20,8 +20,8 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_properties_7fbfa2ee1bed049061858480cd4bcb8a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-09 09:29:47</sys_updated_on>
-        <type>choicelist</type>
+        <sys_updated_on>2020-06-09 04:14:56</sys_updated_on>
+        <type>string</type>
         <value>RSA</value>
         <write_roles/>
     </sys_properties>

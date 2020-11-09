@@ -48,7 +48,7 @@
 			r.setRequestHeader("Content-Type", "application/json");
 			var payload = "{\r\n  \"payload\": {\r\n    \"data\": {\r\n      \"input\": {\r\n        \"requestData\": [\r\n          {\r\n            \"sequenceNo\": 1,\r\n            \"scenario\": \"scenario\",\r\n            \"fieldInfo\": {\r\n              \"txt_vip_name\": \" " + name + " \",\r\n              \"dd_device\": \"" + device + "\",\r\n              \"txt_vip_ip\": \"" + ip + "\",\r\n\t\t\t  \"txt_vip_port\": \"" + port + "\",\r\n\t\t\t  \"txt_pool_name\": \"\",\r\n\t          \"txt_pool_member_ip\": \"\",\r\n\t          \"txt_pool_member_port\": \"\",\r\n\t          \"tab_snat_pool\": [],\r\n              \"tab_pool_members\": [\r\n\t              \t{\r\n\t              \t\t\"txt_pool_name\": \"" + pool_name + "\",\r\n\t            \t\t\"txt_pool_member_ip\": \"" + pool_member_ip + "\",\r\n\t            \t\t\"txt_pool_member_port\": \"" + pool_member_port + "\"\r\n\t              \t}\r\n              \t],\r\n              \"dd_create_monitor\": \"No\",\r\n              \"dd_snat_opt\": \"None\",\r\n              \"dd_server_ssl_opt\": \"None\",\r\n              \"dd_http_profile_opt\": \"None\",\r\n              \"dd_lb_method\": \"round-robin\",\r\n              \"dd_persistence_opt\": \"None\",\r\n              \"dd_client_ssl_opt\": \"None\"\r\n            }\r\n          }\r\n        ]\r\n      },\r\n      \"task_action\": 1\r\n    },\r\n    \"header\": {\r\n      \"workflowName\": \"Create Virtual Server\"\r\n    }\r\n  }\r\n}";
 			r.setRequestBody(payload);
-			r.setHttpTimeout(100);
+			r.setHttpTimeout(10000);
 			var response = r.executeAsync();
 			var responseBody,responseMessage;
 			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
@@ -93,7 +93,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>07136e2f1bca845461858480cd4bcbcd</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>appviewx_sc_create_virtual_server_bigip</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -102,7 +102,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_07136e2f1bca845461858480cd4bcbcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-09 04:59:39</sys_updated_on>
+        <sys_updated_on>2020-11-05 11:44:12</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

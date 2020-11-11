@@ -79,7 +79,7 @@
 		settingName = gs.getProperty("x_avx_appviewx_aut.msetps_ca_settingName");
 		hash = gs.getProperty("x_avx_appviewx_aut.msetps_hash");
 		key = gs.getProperty("x_avx_appviewx_aut.msetps_key");
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\"Default\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Microsoft Enterprise\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":365,\"vendorSpecificDetails\":{}}}";
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\"Default\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Microsoft Enterprise\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":365,\"vendorSpecificDetails\":{\"templateName\": \"WebServer\"}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -142,7 +142,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>2525ba2a1b21449061858480cd4bcb81</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>new_certificate_request</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -151,7 +151,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_2525ba2a1b21449061858480cd4bcb81</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-01-09 11:47:21</sys_updated_on>
+        <sys_updated_on>2020-11-11 06:25:46</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

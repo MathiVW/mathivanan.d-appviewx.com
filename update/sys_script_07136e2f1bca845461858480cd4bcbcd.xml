@@ -41,7 +41,7 @@
 			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
 			var username = gs.getProperty("x_avx_appviewx_aut.Username");
 			var password = gs.getProperty("x_avx_appviewx_aut.Password");
-			r.setEndpoint(url+":5300/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setEndpoint(url+"/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
 			r.setHttpMethod("post");
 			r.setRequestHeader("username", username);
 			r.setRequestHeader("password", password);
@@ -93,7 +93,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>07136e2f1bca845461858480cd4bcbcd</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>appviewx_sc_create_virtual_server_bigip</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -102,7 +102,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_07136e2f1bca845461858480cd4bcbcd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-11-05 11:44:12</sys_updated_on>
+        <sys_updated_on>2020-11-24 05:55:22</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -22,7 +22,7 @@ appviewx_test_connection.prototype = {
 			var username = gs.getProperty("x_avx_appviewx_aut.Username");
 			var password = gs.getProperty("x_avx_appviewx_aut.Password");
 			var payload = "{\"payload\":{}}";
-			r.setEndpoint(url+":5300/avxapi/acctmgmt-perform-login?gwkey=f000ca01&gwsource=web");
+			r.setEndpoint(url+"/avxapi/acctmgmt-perform-login?gwkey=f000ca01&gwsource=web");
 			r.setHttpMethod("post");
 			r.setRequestHeader("username", username);
 			r.setRequestHeader("password", password);
@@ -85,7 +85,7 @@ appviewx_test_connection.prototype = {
         <sys_created_on>2019-12-26 11:46:42</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1368cfcc1b4644142369eb1cad4bcbc3</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>appviewx_test_connection</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
@@ -93,6 +93,6 @@ appviewx_test_connection.prototype = {
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1368cfcc1b4644142369eb1cad4bcbc3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-11-05 11:36:40</sys_updated_on>
+        <sys_updated_on>2020-12-02 05:40:38</sys_updated_on>
     </sys_script_include>
 </record_update>

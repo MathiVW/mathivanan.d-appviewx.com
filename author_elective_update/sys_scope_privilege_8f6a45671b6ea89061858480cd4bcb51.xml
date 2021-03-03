@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="DELETE">
+        <operation>delete</operation>
+        <source_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</source_scope>
+        <status>requested</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-03 12:22:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8f6a45671b6ea89061858480cd4bcb51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>delete</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_scope_privilege_8f6a45671b6ea89061858480cd4bcb51</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-03 12:22:14</sys_updated_on>
+        <target_name>delete</target_name>
+        <target_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_scope_privilege_8f6a45671b6ea89061858480cd4bcb51</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege"><sys_scope_privilege action="INSERT_OR_UPDATE"><operation>delete</operation><source_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</source_scope><status>requested</status><sys_class_name>sys_scope_privilege</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-03-03 12:22:14</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>8f6a45671b6ea89061858480cd4bcb51</sys_id><sys_mod_count>0</sys_mod_count><sys_name>delete</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_update_name>sys_scope_privilege_8f6a45671b6ea89061858480cd4bcb51</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-03 12:22:14</sys_updated_on><target_name>delete</target_name><target_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</target_scope><target_type>sys_db_object</target_type></sys_scope_privilege></record_update>]]></payload>
+        <payload_hash>1112788795</payload_hash>
+        <record_name>delete</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-03 12:22:14</sys_created_on>
+        <sys_id>778a45e31b6ea89061858480cd4bcbaa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>177f809e5fd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-03 12:22:14</sys_updated_on>
+        <type>Cross scope privilege</type>
+        <update_guid>7f8a45e38d6ea8907a89e224cf6da9a9</update_guid>
+        <update_guid_history>7f8a45e38d6ea8907a89e224cf6da9a9:1112788795</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-03 12:22:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_scope_privilege">sys_scope_privilege</sys_db_object>
+        <sys_id>0416ec3137854d708741fce1383a1d90</sys_id>
+        <sys_metadata>8f6a45671b6ea89061858480cd4bcb51</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>delete</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_scope_privilege_8f6a45671b6ea89061858480cd4bcb51</sys_update_name>
+        <sys_update_version display_value="sys_scope_privilege_8f6a45671b6ea89061858480cd4bcb51">778a45e31b6ea89061858480cd4bcbaa</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-03 12:22:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

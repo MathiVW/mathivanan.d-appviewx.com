@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sysauto" version="2" view="RPTc03d6d5aeba312009add4d3df106fe26">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="a2d3cff50fad5300c3e6cd8ce1050e39">03f025ea1b3de41061858480cd4bcbfc</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-22 04:39:11</sys_created_on>
+            <sys_id>43f025ea1b3de41061858480cd4bcbfe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-22 04:39:11</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>active</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="a2d3cff50fad5300c3e6cd8ce1050e39">03f025ea1b3de41061858480cd4bcbfc</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-22 04:39:11</sys_created_on>
+            <sys_id>4bf025ea1b3de41061858480cd4bcbfe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-22 04:39:11</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_class_name</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="a2d3cff50fad5300c3e6cd8ce1050e39">03f025ea1b3de41061858480cd4bcbfc</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-22 04:39:11</sys_created_on>
+            <sys_id>cbf025ea1b3de41061858480cd4bcbfe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-22 04:39:11</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="sysauto" element="NULL" name="sysauto" parent="NULL" relationship="NULL" sys_domain="global" view="a2d3cff50fad5300c3e6cd8ce1050e39">03f025ea1b3de41061858480cd4bcbfc</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-22 04:39:11</sys_created_on>
+            <sys_id>4ff025ea1b3de41061858480cd4bcbfe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-22 04:39:11</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sysauto</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-01-22 04:39:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>03f025ea1b3de41061858480cd4bcbfc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sysauto</sys_name>
+            <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+            <sys_update_name>sys_ui_list_sysauto_RPTc03d6d5aeba312009add4d3df106fe26</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-01-22 04:39:11</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rptc03d6d5aeba312009add4d3df106fe26" name="RPTc03d6d5aeba312009add4d3df106fe26">a2d3cff50fad5300c3e6cd8ce1050e39</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

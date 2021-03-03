@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Other Devices" max_length="40" name="x_avx_appviewx_aut_other_devices" sizeclass="21" type="collection">
+        <element label="Device Name" max_length="40" name="device_name" type="string"/>
+        <element label="IP Address/FQDN" max_length="40" name="ip_addrerss_fqdn" type="string"/>
+        <element label="Model" max_length="40" name="model" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element display="true" label="Status" max_length="40" name="status" type="string"/>
+    </element>
+</database>

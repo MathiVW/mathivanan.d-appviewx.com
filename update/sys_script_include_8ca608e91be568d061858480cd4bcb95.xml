@@ -11,9 +11,10 @@
 appviewx_update_inventory.prototype = {
     initialize: function() {},
 	UpdateADCInventroy: function(){
-// 		this._ADCInventory();
-// 		this._OthersInventory();
+		this._ADCInventory();
+		this._OthersInventory();
 		this._CertificateInventory();
+		gs.log('Update Completed');
 	},
 	_ADCInventory: function() {
 		try {
@@ -42,7 +43,7 @@ appviewx_update_inventory.prototype = {
 				var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controller');
 				var responseBody = response.getBody();
 				var responsecontent =  JSON.parse(responseBody);
-				gs.info(JSON.stringify(responsecontent.response.data));
+				gs.info('Updating ADC Inventory... Please wait...');
 				var device = responsecontent.response.data;
 				for(i = 0; i < device.length; i++){
 					try {
@@ -53,13 +54,33 @@ appviewx_update_inventory.prototype = {
 							ip = device[i].ip;
 						}
 						grinv.initialize();
-						grinv.ip_address_fqdn = ip;
-						grinv.device_name = device[i].name;
-						grinv.modules = JSON.stringify(device[i].module);
-						grinv.vendor = device[i].vendor;
-						grinv.version = device[i].version;
-						grinv.status = device[i].status;
-						grinv.insert();
+						var device_name = device[i].name;
+						var modules;
+						grinv.addQuery('device_name',device_name);
+						grinv.query();
+						if(grinv.getRowCount() > 0){
+							while(grinv.next()){
+							grinv.ip_address_fqdn = ip;
+							grinv.device_name = device[i].name;
+							modules = device[i].module;
+							grinv.modules = modules.toString();
+							grinv.vendor = device[i].vendor;
+							grinv.version = device[i].version;
+							grinv.status = device[i].status;
+							grinv.update();
+							}
+						}
+						else{
+							grinv.ip_address_fqdn = ip;
+							grinv.device_name = device[i].name;
+							modules = device[i].module;
+							grinv.modules = modules.toString();
+							grinv.vendor = device[i].vendor;
+							grinv.version = device[i].version;
+							grinv.status = device[i].status;
+							grinv.insert();
+						}
+						
 					}
 				catch (exe){
 					gs.info(exe);
@@ -111,8 +132,7 @@ appviewx_update_inventory.prototype = {
 					r.setRequestBody(payload);
 					response = r.executeAsync();
 					status  = response.getStatusCode();
-					gs.info(payload);
-					gs.info(JSON.stringify(responsecontent.response.data));
+					gs.info('Updating Certificates Inventory... Please wait...');
 					if (status == 200) {
 						responseBody = response.getBody();
 						responsecontent =  JSON.parse(responseBody);
@@ -120,15 +140,45 @@ appviewx_update_inventory.prototype = {
 						for(i = 0; i < certs.length; i++){
 							try {
 								grinv.initialize();
-								grinv.common_name = certs[i].commonName;
-								grinv.serial_number = certs[i].serialNumber;
-								grinv.issuer_common_name = certs[i].issuerCommonName;
-								grinv.status = certs[i].status;
-								grinv.expiry_date = certs[i].validTo;
-								grinv.certificate_authority = certs[i].certificateAuthority;
-								grinv.source = JSON.stringify(certs[i].discoverySources);
-								grinv.insert();
+								var commonName = certs[i].commonName;
+								var serialNumber = certs[i].serialNumber;
+								var discoverySources;
+								var expiry_date;
+								var date;
+								grinv.addQuery('common_name',commonName);
+								grinv.addQuery('serial_number',serialNumber);
+								grinv.query();
+								if(grinv.getRowCount() > 0)	{
+									while(grinv.next()) {
+										grinv.common_name = certs[i].commonName;
+										grinv.serial_number = certs[i].serialNumber;
+										grinv.issuer_common_name = certs[i].issuerCommonName;
+										grinv.status = certs[i].status;
+										expiry_date = certs[i].validTo;
+										date = new Date(expiry_date);
+										grinv.expiry_date = date.toDateString();
+										grinv.certificate_authority = certs[i].certificateAuthority;
+										discoverySources = certs[i].discoverySources;
+										grinv.source = discoverySources.toString();
+										grinv.update();
+									}
+								}
+	
+								else {
+										grinv.common_name = certs[i].commonName;
+										grinv.serial_number = certs[i].serialNumber;
+										grinv.issuer_common_name = certs[i].issuerCommonName;
+										grinv.status = certs[i].status;
+										expiry_date = certs[i].validTo;
+										date = new Date(expiry_date);
+										grinv.expiry_date = date.toDateString();
+										grinv.certificate_authority = certs[i].certificateAuthority;
+										discoverySources = certs[i].discoverySources;
+										grinv.source = discoverySources.toString() ;
+										grinv.insert();
+								}
 							}
+
 							catch (exe){
 								gs.info(exe);
 									}
@@ -183,17 +233,32 @@ appviewx_update_inventory.prototype = {
 				grinv = new GlideRecord('x_avx_appviewx_aut_other_devices');
 				responseBody = response.getBody();
 				responsecontent =  JSON.parse(responseBody);
-				gs.info(JSON.stringify(responsecontent.response.data));
+				gs.info('Updating Other Devices Inventory... Please wait...');
 				device = responsecontent.response.data;
 				for(i = 0; i < device.length; i++){
 					if (device[i].category == "Others"){
 						try {
 							grinv.initialize();
-							grinv.ip_addrerss_fqdn = device[i].ip;
-							grinv.device_name = device[i].name;
-							grinv.model = device[i].model;
-							grinv.status = device[i].status;
-							grinv.insert();
+							var device_name = device[i].name;
+							grinv.addQuery('device_name',device_name);
+							grinv.query();
+							if(grinv.getRowCount() > 0){
+								while(grinv.next()){
+									grinv.ip_addrerss_fqdn = device[i].ip;
+									grinv.device_name = device[i].name;
+									grinv.model = device[i].model;
+									grinv.status = device[i].status;
+									grinv.update();
+								}
+							}
+							else{
+								grinv.ip_addrerss_fqdn = device[i].ip;
+								grinv.device_name = device[i].name;
+								grinv.model = device[i].model;
+								grinv.status = device[i].status;
+								grinv.insert();
+
+							}
 						}
 					catch (exe){
 						gs.info(exe);
@@ -219,7 +284,7 @@ appviewx_update_inventory.prototype = {
         <sys_created_on>2021-01-07 03:19:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8ca608e91be568d061858480cd4bcb95</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>appviewx_update_inventory</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
@@ -227,6 +292,6 @@ appviewx_update_inventory.prototype = {
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_8ca608e91be568d061858480cd4bcb95</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-03 12:02:36</sys_updated_on>
+        <sys_updated_on>2021-03-08 16:00:52</sys_updated_on>
     </sys_script_include>
 </record_update>

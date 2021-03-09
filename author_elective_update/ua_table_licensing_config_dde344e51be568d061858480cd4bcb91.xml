@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="DELETE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_avx_appviewx_aut_application_delivery_controller</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-06 09:02:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>dde344e51be568d061858480cd4bcb91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut_application_delivery_controller</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>ua_table_licensing_config_dde344e51be568d061858480cd4bcb91</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 09:02:51</sys_updated_on>
+    </ua_table_licensing_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>ua_table_licensing_config_dde344e51be568d061858480cd4bcb91</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="INSERT_OR_UPDATE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_avx_appviewx_aut_application_delivery_controller</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-06 09:02:51</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>dde344e51be568d061858480cd4bcb91</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_avx_appviewx_aut_application_delivery_controller</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_update_name>ua_table_licensing_config_dde344e51be568d061858480cd4bcb91</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-06 09:02:51</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+        <payload_hash>-2032908041</payload_hash>
+        <record_name>x_avx_appviewx_aut_application_delivery_controller</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-06 09:02:51</sys_created_on>
+        <sys_id>59e344e51be568d061858480cd4bcb93</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>176d6ef3d160000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 09:02:51</sys_updated_on>
+        <type>Table Subscription Configuration</type>
+        <update_guid>51e344e545e568d08bbba433dd253393</update_guid>
+        <update_guid_history>51e344e545e568d08bbba433dd253393:-2032908041</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-09 06:33:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="ua_table_licensing_config">ua_table_licensing_config</sys_db_object>
+        <sys_id>2b8b1bcb4a6b48f69c50f7b0834f4024</sys_id>
+        <sys_metadata>dde344e51be568d061858480cd4bcb91</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut_application_delivery_controller</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>ua_table_licensing_config_dde344e51be568d061858480cd4bcb91</sys_update_name>
+        <sys_update_version display_value="ua_table_licensing_config_dde344e51be568d061858480cd4bcb91">59e344e51be568d061858480cd4bcb93</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-09 06:33:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

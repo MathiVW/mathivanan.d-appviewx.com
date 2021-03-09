@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci" label="Certificates" max_length="40" name="x_avx_appviewx_aut_certificates" type="collection">
+        <element label="Certificate Authority" max_length="40" name="certificate_authority" type="string"/>
+        <element label="Common Name" max_length="40" name="common_name" type="string"/>
+        <element label="Expiry Date" max_length="40" name="expiry_date" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Source" max_length="40" name="source" type="string"/>
+        <element label="Status" max_length="40" name="status" type="string"/>
+    </element>
+</database>

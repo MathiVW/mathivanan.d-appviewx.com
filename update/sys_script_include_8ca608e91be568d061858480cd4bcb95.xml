@@ -11,10 +11,10 @@
 appviewx_update_inventory.prototype = {
     initialize: function() {},
 	UpdateADCInventroy: function(){
-		this._ADCInventory();
-		this._OthersInventory();
+// 		this._ADCInventory();
+// 		this._OthersInventory();
 		this._CertificateInventory();
-		gs.log('Update Completed');
+		gs.info('Update Completed');
 	},
 	_ADCInventory: function() {
 		try {
@@ -123,7 +123,7 @@ appviewx_update_inventory.prototype = {
 			var response = r.executeAsync();
 			var status  = response.getStatusCode();
 			if (status == 200) {
-				var grinv = new GlideRecord('x_avx_appviewx_aut_certificates_inventory');
+				var grinv = new GlideRecord('x_avx_appviewx_aut_certificates');
 				var responseBody = response.getBody();
 				var responsecontent =  JSON.parse(responseBody);
 				var totalrecords = responsecontent.response.totalRecords;
@@ -151,6 +151,7 @@ appviewx_update_inventory.prototype = {
 								if(grinv.getRowCount() > 0)	{
 									while(grinv.next()) {
 										grinv.common_name = certs[i].commonName;
+										grinv.name = certs[i].commonName;
 										grinv.serial_number = certs[i].serialNumber;
 										grinv.issuer_common_name = certs[i].issuerCommonName;
 										grinv.status = certs[i].status;
@@ -166,6 +167,7 @@ appviewx_update_inventory.prototype = {
 	
 								else {
 										grinv.common_name = certs[i].commonName;
+										grinv.name = certs[i].commonName;
 										grinv.serial_number = certs[i].serialNumber;
 										grinv.issuer_common_name = certs[i].issuerCommonName;
 										grinv.status = certs[i].status;
@@ -240,22 +242,29 @@ appviewx_update_inventory.prototype = {
 						try {
 							grinv.initialize();
 							var device_name = device[i].name;
-							grinv.addQuery('device_name',device_name);
+							var access;
+							grinv.addQuery('name',device_name);
 							grinv.query();
 							if(grinv.getRowCount() > 0){
 								while(grinv.next()){
-									grinv.ip_addrerss_fqdn = device[i].ip;
-									grinv.device_name = device[i].name;
+									grinv.ip_address_fqdn = device[i].ip;
+									grinv.name = device[i].name;
 									grinv.model = device[i].model;
 									grinv.status = device[i].status;
+									access = device[i].access;
+									grinv.username = access[0].userName;
+									grinv.password = device[i].password;
 									grinv.update();
 								}
 							}
 							else{
-								grinv.ip_addrerss_fqdn = device[i].ip;
-								grinv.device_name = device[i].name;
+								grinv.ip_address_fqdn = device[i].ip;
+								grinv.name = device[i].name;
 								grinv.model = device[i].model;
 								grinv.status = device[i].status;
+								access = device[i].access;
+								grinv.username = access[0].userName;
+								grinv.password = device[i].password;
 								grinv.insert();
 
 							}
@@ -284,7 +293,7 @@ appviewx_update_inventory.prototype = {
         <sys_created_on>2021-01-07 03:19:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8ca608e91be568d061858480cd4bcb95</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>appviewx_update_inventory</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
@@ -292,6 +301,6 @@ appviewx_update_inventory.prototype = {
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_8ca608e91be568d061858480cd4bcb95</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-09 04:36:00</sys_updated_on>
+        <sys_updated_on>2021-03-09 05:24:14</sys_updated_on>
     </sys_script_include>
 </record_update>

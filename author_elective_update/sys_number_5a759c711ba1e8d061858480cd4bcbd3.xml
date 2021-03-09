@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="x_avx_appviewx_aut_other_devices">x_avx_appviewx_aut_other_devices</category>
+        <maximum_digits>4</maximum_digits>
+        <number>1000</number>
+        <prefix>OD</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 04:58:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5a759c711ba1e8d061858480cd4bcbd3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>OD</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_number_5a759c711ba1e8d061858480cd4bcbd3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-08 14:40:45</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_number_5a759c711ba1e8d061858480cd4bcbd3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="x_avx_appviewx_aut_other_devices">x_avx_appviewx_aut_other_devices</category><maximum_digits>4</maximum_digits><number>1000</number><prefix>OD</prefix><sys_class_name>sys_number</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-07 04:58:07</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>5a759c711ba1e8d061858480cd4bcbd3</sys_id><sys_mod_count>2</sys_mod_count><sys_name>OD</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_update_name>sys_number_5a759c711ba1e8d061858480cd4bcbd3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-08 14:40:45</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>1666132436</payload_hash>
+        <record_name>OD</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-08 14:40:45</sys_created_on>
+        <sys_id>693adf051bb6601061858480cd4bcb14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>178124881fc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-08 14:40:45</sys_updated_on>
+        <type>Number</type>
+        <update_guid>613adf051ab6601082e5588f785afd14</update_guid>
+        <update_guid_history>613adf051ab6601082e5588f785afd14:1666132436,3a999cf506a1e8d0526ed6c278567d9d:-71089038,5e759c7102a1e8d08454b82412c382e5:1666132436</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-09 04:35:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>0e7eeb2e668e48f88115e538db1336d9</sys_id>
+        <sys_metadata>5a759c711ba1e8d061858480cd4bcbd3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OD</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent display_value="">4e245c791b61e8d061858480cd4bcb36</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_number_5a759c711ba1e8d061858480cd4bcbd3</sys_update_name>
+        <sys_update_version display_value="sys_number_5a759c711ba1e8d061858480cd4bcbd3">693adf051bb6601061858480cd4bcb14</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-09 04:35:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

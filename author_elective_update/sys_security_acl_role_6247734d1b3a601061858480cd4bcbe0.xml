@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-08 16:47:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6247734d1b3a601061858480cd4bcbe0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut_test.admin</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_security_acl display_value="x_avx_appviewx_aut_test">2247734d1b3a601061858480cd4bcbaa</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_6247734d1b3a601061858480cd4bcbe0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-08 16:47:47</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_security_acl_role_6247734d1b3a601061858480cd4bcbe0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-03-08 16:47:47</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>6247734d1b3a601061858480cd4bcbe0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_avx_appviewx_aut_test.admin</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_security_acl display_value="x_avx_appviewx_aut_test">2247734d1b3a601061858480cd4bcbaa</sys_security_acl><sys_update_name>sys_security_acl_role_6247734d1b3a601061858480cd4bcbe0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-03-08 16:47:47</sys_updated_on><sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-668327510</payload_hash>
+        <record_name>x_avx_appviewx_aut_test.admin</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-08 16:47:48</sys_created_on>
+        <sys_id>3e47734d1b3a601061858480cd4bcbef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17812bcd3990000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-08 16:47:48</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>3647734dcc3a601059cbae3e336ad7ef</update_guid>
+        <update_guid_history>3647734dcc3a601059cbae3e336ad7ef:-668327510</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 2021-03-08 22:18:15">5d67b74d1b3a601061858480cd4bcb90</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-08 16:48:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>90f71a3577f344c7a1e3bd438266bd21</sys_id>
+        <sys_metadata>6247734d1b3a601061858480cd4bcbe0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut_test.admin</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent display_value="">2247734d1b3a601061858480cd4bcbaa</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_6247734d1b3a601061858480cd4bcbe0</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_6247734d1b3a601061858480cd4bcbe0">3e47734d1b3a601061858480cd4bcbef</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-08 16:48:15</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

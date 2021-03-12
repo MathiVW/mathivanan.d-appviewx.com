@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
@@ -15,20 +15,25 @@
        var ans = confirm("Do you want to add device into AppViewX?");
 		if (ans){
 			var ga = new GlideAjax('create_adc_in_appviewx');
-			ga.addParam('sysparm_name', 'create_adc');
+			ga.addParam('sysparm_name','addAdcDevice');
 			ga.addParam('sysparm_device_name', g_form.getValue('name'));
 			ga.addParam('sysparm_username', g_form.getValue('username'));
-			ga.addParam('sysparm_password', g_form.getValue('password'));
-			ga.addParam('sysparm_ip', g_form.getValue('ip'));
+			ga.addParam('sysparm_password', g_form.getValue('adc_password'));
+			ga.addParam('sysparm_ip', g_form.getValue('ip_address'));
 			ga.addParam('sysparm_modules', g_form.getValue('modules'));
-			ga.addParam('sysparm_vendor', g_form.getValue('vendor'));
-			ga.getXML(Parse);
+			ga.addParam('sysparm_vendor', g_form.getValue('adc_vendor'));
+			ga.addParam('sysparm_number',g_form.getValue('number'));
+			ga.getXML(callBackFunction);
+			g_form.setValue('device_in_appviewx','Yes');
+
 		}   
 	}
-function Parse(response) {
-	var answer = response.responseXML.documentElement.getAttribute("answer");
-	
-}
+	function callBackFunction(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		if(answer == "Done"){
+				g_form.setValue('device_in_appviewx','Yes');
+			}
+	}
 }
 ]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -37,7 +42,7 @@ function Parse(response) {
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>4434ec821b32a41061858480cd4bcb1f</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>add_device_confirmation</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -46,7 +51,7 @@ function Parse(response) {
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_client_4434ec821b32a41061858480cd4bcb1f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-11 12:48:00</sys_updated_on>
+        <sys_updated_on>2021-03-12 09:28:09</sys_updated_on>
         <table>x_avx_appviewx_aut_application_delivery_controllers</table>
         <type>onSubmit</type>
         <ui_type>0</ui_type>

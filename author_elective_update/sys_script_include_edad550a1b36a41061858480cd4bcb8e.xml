@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_avx_appviewx_aut.delete_device</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>delete_device</name>
+        <script><![CDATA[var delete_device = Class.create();
+delete_device.prototype = {
+	initialize: function() {},
+	adc: function(device) {
+		try {
+			gs.info("Deleting Device from AppViewX");
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			var dev = device.split(",");
+			var payload = {"payload":{"name":[]}};
+			payload.name = dev;
+			r.setEndpoint(url+"/avxapi/adc-delete-device?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			r.setRequestBody(JSON.stringify(payload));
+			r.setHttpTimeout(10000);
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_test_connection';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring a test connection between Servicenow and AppViewX';
+				gr.insert();
+			var response = r.executeAsync();
+			var status  = response.getStatusCode();
+			var responseBody;
+			if (status == 200) {
+				responseBody = response.getBody();
+				var data =  JSON.parse(responseBody);
+				if (data["response"]["status"] == "SUCCESS"){
+					gr.message = 'Connection test result - Success ';
+					gr.insert();
+					gs.info("Response status code " + status);
+					gs.info("Server rechability test result:  SUCCESS");
+					gs.info("Connection test result:  SUCCESS ");
+				}
+				else {
+					gr.message = 'Connection test result - Failed \n'+ 'Response - ' + data[response];
+					gr.insert();
+					gs.info("Connection test result:  " + data["response"]["statusDescription"]+ " ");
+					gs.info("Connection test result:  Failed ");
+				}
+			}
+			else {
+				var responseMessage = response.getErrorMessage();
+				responseBody = response.getBody();
+				gs.info('Test response - ' + responseBody + '\n' + responseMessage);
+				gr.message = 'Connection test result - Failed \n'+ 'Possible Error : AppViewX Server might not Reachable or Block through a Firewall or AppviewX Instance details are not filled under "Properties" menu' ;
+				gr.insert();
+				gs.info("Response status code: " + status);
+				gs.info("Possible error : AppViewX Server not Reachable or Connections blocked through a Firewall ");
+				gs.info("Connection test result:  FAILED ");
+			}
+			} 
+		catch (exe) {
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_test_connection';
+				gr.application = 'AppViewX';
+				gr.message = 'Connection test result - Failed \n'+ 'Response - ' + exe;
+				gr.insert();
+			gs.error("AppViewX REST API test failed: " + exe);
+		}
+	}
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 08:18:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>edad550a1b36a41061858480cd4bcb8e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>delete_device</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_edad550a1b36a41061858480cd4bcb8e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 08:22:56</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_script_include_edad550a1b36a41061858480cd4bcb8e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_avx_appviewx_aut.delete_device&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;delete_device&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var delete_device = Class.create();
+delete_device.prototype = {
+	initialize: function() {},
+	adc: function(device) {
+		try {
+			gs.info("Deleting Device from AppViewX");
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			var dev = device.split(",");
+			var payload = {"payload":{"name":[]}};
+			payload.name = dev;
+			r.setEndpoint(url+"/avxapi/adc-delete-device?gwkey=f000ca01&amp;gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			r.setRequestBody(JSON.stringify(payload));
+			r.setHttpTimeout(10000);
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_test_connection';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring a test connection between Servicenow and AppViewX';
+				gr.insert();
+			var response = r.executeAsync();
+			var status  = response.getStatusCode();
+			var responseBody;
+			if (status == 200) {
+				responseBody = response.getBody();
+				var data =  JSON.parse(responseBody);
+				if (data["response"]["status"] == "SUCCESS"){
+					gr.message = 'Connection test result - Success ';
+					gr.insert();
+					gs.info("Response status code " + status);
+					gs.info("Server rechability test result:  SUCCESS");
+					gs.info("Connection test result:  SUCCESS ");
+				}
+				else {
+					gr.message = 'Connection test result - Failed \n'+ 'Response - ' + data[response];
+					gr.insert();
+					gs.info("Connection test result:  " + data["response"]["statusDescription"]+ " ");
+					gs.info("Connection test result:  Failed ");
+				}
+			}
+			else {
+				var responseMessage = response.getErrorMessage();
+				responseBody = response.getBody();
+				gs.info('Test response - ' + responseBody + '\n' + responseMessage);
+				gr.message = 'Connection test result - Failed \n'+ 'Possible Error : AppViewX Server might not Reachable or Block through a Firewall or AppviewX Instance details are not filled under "Properties" menu' ;
+				gr.insert();
+				gs.info("Response status code: " + status);
+				gs.info("Possible error : AppViewX Server not Reachable or Connections blocked through a Firewall ");
+				gs.info("Connection test result:  FAILED ");
+			}
+			} 
+		catch (exe) {
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_test_connection';
+				gr.application = 'AppViewX';
+				gr.message = 'Connection test result - Failed \n'+ 'Response - ' + exe;
+				gr.insert();
+			gs.error("AppViewX REST API test failed: " + exe);
+		}
+	}
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-03-11 08:18:58&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;edad550a1b36a41061858480cd4bcb8e&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;delete_device&lt;/sys_name&gt;&lt;sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="AppViewX Automation+"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_edad550a1b36a41061858480cd4bcb8e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-03-11 08:22:56&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-119633021</payload_hash>
+        <record_name>delete_device</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 08:22:56</sys_created_on>
+        <sys_id>e080218a1b36a41061858480cd4bcbdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1782061b0970000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 08:22:56</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>2880218ae736a410a9b3e8bf287045db</update_guid>
+        <update_guid_history>2880218ae736a410a9b3e8bf287045db:-119633021,e69f118ac136a4100dd1bfa05ae388b7:891787632</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 09:57:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>46f39eb33bf747969684fcc96621c3e4</sys_id>
+        <sys_metadata>edad550a1b36a41061858480cd4bcb8e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>delete_device</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_script_include_edad550a1b36a41061858480cd4bcb8e</sys_update_name>
+        <sys_update_version display_value="sys_script_include_edad550a1b36a41061858480cd4bcb8e">e080218a1b36a41061858480cd4bcbdc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 09:57:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

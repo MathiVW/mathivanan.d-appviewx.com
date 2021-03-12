@@ -14,7 +14,7 @@
         <choice>1</choice>
         <choice_field/>
         <choice_table/>
-        <column_label>Add Device into AppViewX</column_label>
+        <column_label>Add Device into AppViewX ?</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -55,15 +55,15 @@
         <sys_created_on>2021-03-09 07:55:59</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f1f6879d1bfaa01061858480cd4bcbc2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Add Device into AppViewX</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Add Device into AppViewX ?</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_dictionary_x_avx_appviewx_aut_application_delivery_controllers_add_device_into_appviewx</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-09 07:55:59</sys_updated_on>
+        <sys_updated_on>2021-03-11 08:09:58</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <u_pre_production_testing/>

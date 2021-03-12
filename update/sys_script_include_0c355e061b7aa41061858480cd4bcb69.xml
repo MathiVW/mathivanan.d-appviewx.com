@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_avx_appviewx_aut.create_adc_in_appviewx</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>create_adc_in_appviewx</name>
+        <script><![CDATA[var create_adc_in_appviewx = Class.create();
+create_adc_in_appviewx.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	initialize: function() {},
+	create_adc: function() {
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			var decrypted = this.getParameter('sysparm_password'); 
+			var val = gr.decrypted.getDecryptedValue();
+			r.setEndpoint(url+"/avxapi/adc-add-device?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var mod = this.getParameter('sysparm_modules');
+			var modules = mod.split(",");
+			var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
+			payload.payload.primary[0].access[0].userName = this.getParameter('sysparm_username');
+			payload.payload.primary[0].access[0].password = decrypted.toString();
+			payload.payload.primary[0].module = modules;
+			payload.payload.primary[0].ip = this.getParameter('sysparm_ip');
+			payload.payload.primary[0].vendor = this.getParameter('sysparm_vendor');
+			payload.payload.primary[0].name = this.getParameter('sysparm_name');
+			var pay = JSON.stringify(payload);
+			r.setRequestBody(pay);
+			r.setHttpTimeout(10000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;	
+			if (response.haveError())
+				{
+					responseMessage = response.getErrorMessage();
+					responseBody = response.getBody();
+					responseBody = JSON.parse(responseBody);
+					return "Done";
+				}
+			else 
+				{
+					responseBody = response.getBody();
+					responseBody = JSON.parse(responseBody);
+						return "Failed";					
+				}
+				
+			},
+    type: 'create_adc_in_appviewx'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 12:18:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0c355e061b7aa41061858480cd4bcb69</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>create_adc_in_appviewx</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_0c355e061b7aa41061858480cd4bcb69</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-11 12:36:00</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="cmdb_ci" label="Application Delivery Controllers" max_length="40" name="x_avx_appviewx_aut_application_delivery_controllers" sizeclass="25" type="collection">
+    <element extends="cmdb_ci" label="Application Delivery Controllers" max_length="40" name="x_avx_appviewx_aut_application_delivery_controllers" sizeclass="28" type="collection">
         <element attributes="synchronizePartitions=true" label="Password" max_length="255" name="adc_password" type="password2"/>
         <element attributes="synchronizePartitions=true" label="Vendor" max_length="100" name="adc_vendor" type="string"/>
-        <element choice="1" label="Add Device into AppViewX ?" max_length="40" name="add_device_into_appviewx" type="choice">
-            <choice>
-                <element inactive="true" inactive_on_update="true" label="None" sequence="0" value="none"/>
-                <element inactive_on_update="false" label="Yes" sequence="0" value="yes"/>
-                <element inactive_on_update="false" label="No" sequence="1" value="no"/>
-                <element inactive_on_update="false" label="Already Exists" sequence="2" value="already_exists"/>
-            </choice>
-        </element>
         <element label="Is Device Present in AppViewX ?" max_length="40" name="device_in_appviewx" read_only="true" type="string"/>
         <element default="LTM" label="Modules" max_length="40" name="modules" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" read_only="true" type="string"/>

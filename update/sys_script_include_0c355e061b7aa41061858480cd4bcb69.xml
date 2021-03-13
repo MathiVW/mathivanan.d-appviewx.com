@@ -10,6 +10,20 @@
         <script><![CDATA[var create_adc_in_appviewx = Class.create();
 create_adc_in_appviewx.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	
+	duplicateNameCheck: function() {
+		var dev_name =  this.getParameter('sysparm_device_name');
+		var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
+			grinv.initialize();
+			grinv.addQuery('name',dev_name);
+			grinv.query();
+			while(grinv.next()){
+				if(grinv.name == dev_name){
+					return false;
+				}
+			}
+			return true;
+	},
+	
 	addAdcDevice: function() 
 		{		
 			var r = new sn_ws.RESTMessageV2();
@@ -37,22 +51,15 @@ create_adc_in_appviewx.prototype = Object.extendsObject(global.AbstractAjaxProce
 			var response = r.executeAsync();
 			var responseBody,responseMessage;
 			var answer = "Done";
-// 			gs.log("Executing");
-// 			if (response.haveError())
-// 				{
-// 					responseBody = response.getBody();
-// 					responseBody = JSON.parse(responseBody);
-// 					answer = "Failed";
-// 				}
-// 			else 
-// 				{
-// 					responseBody = response.getBody();
-// 					gs.log(responseBody);
-					
-// 					responseBody = JSON.parse(responseBody);
-// 					answer =  "Completed";				
-// 				}
-			return answer;
+			if (response.haveError())
+				{
+					answer = "Failed to add device into AppViewX";
+				}
+			else 
+				{
+					answer =  "Device added into AppViewX";				
+				}
+			this.getRootElement().setAttribute('answer', answer);
 			},
     type: 'create_adc_in_appviewx'
 });]]></script>
@@ -61,7 +68,7 @@ create_adc_in_appviewx.prototype = Object.extendsObject(global.AbstractAjaxProce
         <sys_created_on>2021-03-11 12:18:07</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0c355e061b7aa41061858480cd4bcb69</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>create_adc_in_appviewx</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
@@ -69,6 +76,6 @@ create_adc_in_appviewx.prototype = Object.extendsObject(global.AbstractAjaxProce
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_0c355e061b7aa41061858480cd4bcb69</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-12 09:27:28</sys_updated_on>
+        <sys_updated_on>2021-03-13 05:28:17</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>name</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>check_duplicate_device</name>
+        <order/>
+        <script><![CDATA[function onCellEdit(sysIDs, table, oldValues, newValue, callback) {
+  var saveAndClose = true;
+ //Type appropriate comment here, and begin script below
+	var ga = new GlideAjax('create_adc_in_appviewx');
+	ga.addParam('sysparm_name','duplicateNameCheck');
+	ga.addParam('sysparm_device_name', g_form.getValue('name'));
+	ga.getXML(callBackFunction);
+
+	function callBackFunction(response) {
+		var answer=response.responseXML.documentElement.getAttribute("answer");
+		if (answer == "false"){
+			g_form.showErrorBox('name','Device name already exists');
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+ 
+ callback(saveAndClose); 
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-13 06:28:23</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>98e8df6a1bba681061858480cd4bcb00</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>check_duplicate_device</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_client_98e8df6a1bba681061858480cd4bcb00</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-13 06:28:23</sys_updated_on>
+        <table>x_avx_appviewx_aut_application_delivery_controllers</table>
+        <type>onCellEdit</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_script_client_98e8df6a1bba681061858480cd4bcb00</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;name&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;check_duplicate_device&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onCellEdit(sysIDs, table, oldValues, newValue, callback) {
+  var saveAndClose = true;
+ //Type appropriate comment here, and begin script below
+	var ga = new GlideAjax('create_adc_in_appviewx');
+	ga.addParam('sysparm_name','duplicateNameCheck');
+	ga.addParam('sysparm_device_name', g_form.getValue('name'));
+	ga.getXML(callBackFunction);
+
+	function callBackFunction(response) {
+		var answer=response.responseXML.documentElement.getAttribute("answer");
+		if (answer == "false"){
+			g_form.showErrorBox('name','Device name already exists');
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+ 
+ callback(saveAndClose); 
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-03-13 06:28:23&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;98e8df6a1bba681061858480cd4bcb00&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;check_duplicate_device&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="AppViewX Automation+"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_98e8df6a1bba681061858480cd4bcb00&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-03-13 06:28:23&lt;/sys_updated_on&gt;&lt;table&gt;x_avx_appviewx_aut_application_delivery_controllers&lt;/table&gt;&lt;type&gt;onCellEdit&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1640409962</payload_hash>
+        <record_name>check_duplicate_device</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-13 06:28:23</sys_created_on>
+        <sys_id>ce7993ee1bba681061858480cd4bcb65</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1782a45884a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-13 06:28:23</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>c67993ee21ba681000b3c938f10c0865</update_guid>
+        <update_guid_history>c67993ee21ba681000b3c938f10c0865:1640409962</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-13 06:33:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>628eb1dbaef64cfbb0ad0a56193ff3c1</sys_id>
+        <sys_metadata>98e8df6a1bba681061858480cd4bcb00</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>check_duplicate_device</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent display_value="Application Delivery Controllers">66fe62511bf6a01061858480cd4bcbb5</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_script_client_98e8df6a1bba681061858480cd4bcb00</sys_update_name>
+        <sys_update_version display_value="sys_script_client_98e8df6a1bba681061858480cd4bcb00">ce7993ee1bba681061858480cd4bcb65</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-13 06:33:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

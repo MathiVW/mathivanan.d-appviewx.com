@@ -15,9 +15,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_avx_appviewx_aut_application_delivery_controllers">add_device_into_appviewx=yes^EQ<item display_value="Yes" endquery="false" field="add_device_into_appviewx" goto="false" newquery="false" operator="=" or="false" value="yes"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter_condition>
+        <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
         <name>create_adc_device_in_appviewx</name>
@@ -30,55 +28,23 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
-			var r = new sn_ws.RESTMessageV2();
-			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
-			var username = gs.getProperty("x_avx_appviewx_aut.Username");
-			var password = gs.getProperty("x_avx_appviewx_aut.Password");
-			var decrypted = current.adc_password; 
-// 			var val = gr.decrypted.getDecryptedValue();
-			r.setEndpoint(url+"/avxapi/adc-add-device?gwkey=f000ca01&gwsource=web");
-			r.setHttpMethod("post");
-			r.setRequestHeader("username", username);
-			r.setRequestHeader("password", password);
-			r.setRequestHeader("Content-Type", "application/json");
-			var mod = current.modules ;
-			var modules = mod.split(",");
-			var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
-			payload.payload.primary[0].access[0].userName = current.username.toString();
-			payload.payload.primary[0].access[0].password = decrypted.toString();
-			payload.payload.primary[0].module = modules;
-			payload.payload.primary[0].ip = current.ip_address.toString();
-			payload.payload.primary[0].vendor = current.adc_vendor.toString();
-			payload.payload.primary[0].name = current.name.toString();
-			var pay = JSON.stringify(payload);
-			r.setRequestBody(pay);
-			r.setHttpTimeout(10000);
-			var response = r.executeAsync();
-			var responseBody,responseMessage;	
-			if (response.haveError())
-				{
-					responseMessage = response.getErrorMessage();
-					responseBody = response.getBody();
-					responseBody = JSON.parse(responseBody);
-					gs.addInfoMessage(responseBody["message"]);
-				}
-			else 
-				{
-					responseBody = response.getBody();
-					responseBody = JSON.parse(responseBody);
-					gs.addInfoMessage("Device added into AppViewX Successfully");
-					
-				}
-				
-			}		
-)(current,previous);]]></script>
+	var dev_name =  current.name.toString();
+	var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
+	grinv.initialize();
+	grinv.query('name',dev_name);
+	while(grinv.next()){
+		gs.addInfoMessage('<script type=text/javascript>var t=function(){confirm("Do you want to add device into AppViewX?")};</script>');
+		current.setAbortAction(true);
+	}
+	
+})(current,previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-03-09 07:37:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>9921c3551bfaa01061858480cd4bcb38</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>create_adc_device_in_appviewx</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -87,8 +53,8 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_9921c3551bfaa01061858480cd4bcb38</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-12 06:21:16</sys_updated_on>
+        <sys_updated_on>2021-03-13 05:18:12</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>before</when>
     </sys_script>
 </record_update>

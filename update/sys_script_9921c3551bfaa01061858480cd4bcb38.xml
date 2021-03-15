@@ -66,13 +66,13 @@
 		r.setRequestHeader("Content-Type", "application/json");
 		var decrypted = current.adc_password.getDecryptedValue();
 		var modules = current.modules.split(",");
-		var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
-		payload.payload.primary[0].access[0].userName = current.username;
+		var payload = {"payload":{"primary":[{"vendor":"","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"","dataCenter":"","communicationAddressType":"ip","ip":"","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
+		payload.payload.primary[0].access[0].userName = current.username.toString();
 		payload.payload.primary[0].access[0].password = gs.base64Encode(decrypted.toString());
 		payload.payload.primary[0].module = modules;
-		payload.payload.primary[0].ip = current.ip_address;
-		payload.payload.primary[0].vendor = current.adc_vendor;
-		payload.payload.primary[0].name = current.name;
+		payload.payload.primary[0].ip = current.ip_address.toString();
+		payload.payload.primary[0].vendor = current.adc_vendor.toString();
+		payload.payload.primary[0].name = current.name.toString();
 		var pay = JSON.stringify(payload);
 		r.setRequestBody(pay);
 		r.setHttpTimeout(5000);
@@ -82,20 +82,21 @@
 		{
 			responseMessage = response.getErrorMessage();
 			responseBody = response.getBody();
-			current.device_in_appviewx = responseBody;
-			gs.addErrorMessage("Failed to add device - "+ responseBody);
+			current.device_in_appviewx = responseMessage;
+			gs.addErrorMessage("Failed to add device - "+ responseMessage);
 		}
 		else 
 		{
-			current.device_in_appviewx = "Yes";
+			current.device_in_appviewx = "Added into AppViewX";
 			gs.addInfoMessage("Device added succesfully in AppViewX");		
 		}
-		current.update();
+		
 	}
 	else if(is_add == "" &&  current.device_in_appviewx == 'No'){
 		current.device_in_appviewx = "Not Added";
-		current.update();
+		
 	}
+	
 	else{
 		//
 	}
@@ -106,7 +107,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>9921c3551bfaa01061858480cd4bcb38</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>create_adc_device_in_appviewx</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -115,7 +116,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_9921c3551bfaa01061858480cd4bcb38</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-15 03:02:40</sys_updated_on>
+        <sys_updated_on>2021-03-15 11:10:37</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

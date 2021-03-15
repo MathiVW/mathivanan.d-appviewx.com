@@ -59,18 +59,18 @@
 		var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
 		var username = gs.getProperty("x_avx_appviewx_aut.Username");
 		var password = gs.getProperty("x_avx_appviewx_aut.Password");
-		r.setEndpoint(url+"/avxapi/other-device?gwkey=f000ca01&gwsource=web");
+		r.setEndpoint(url+"/avxapi/other-add-device?gwkey=f000ca01&gwsource=web");
 		r.setHttpMethod("post");
 		r.setRequestHeader("username", username);
 		r.setRequestHeader("password", password);
 		r.setRequestHeader("Content-Type", "application/json");
 		var decrypted = current.password.getDecryptedValue();
 		var payload = {"payload":{"primary":[{"vendor":"","access":[{"userName":"","password":"","accessType":"SSH:22"}],"module":[],"deviceType":[],"deviceCommunicationPort":{"sshPort":22},"name":"","ip":"","model":"","description":"","dataCenter":"","credentialType":"Manual Entry","enablePassword":"","deviceId":"","category":"Others","subsystem":"Others","status":"Inprogress","isAutoDetect":true}],"secondary":[]}};
-		payload.payload.primary[0].access[0].userName = current.username;
+		payload.payload.primary[0].access[0].userName = current.username.toString();
 		payload.payload.primary[0].access[0].password = gs.base64Encode(decrypted.toString());
-		payload.payload.primary[0].model = current.model;
-		payload.payload.primary[0].ip = current.ip_address_fqdn;
-		payload.payload.primary[0].name = current.name;
+		payload.payload.primary[0].model = current.model.toString();
+		payload.payload.primary[0].ip = current.ip_address_fqdn.toString();
+		payload.payload.primary[0].name = current.name.toString();
 		var pay = JSON.stringify(payload);
 		r.setRequestBody(pay);
 		r.setHttpTimeout(5000);
@@ -80,19 +80,18 @@
 		{
 			responseMessage = response.getErrorMessage();
 			responseBody = response.getBody();
-			current.is_device_present_in_appviewx = responseBody;
+			current.is_device_present_in_appviewx = responseMessage;
 			gs.addErrorMessage("Failed to add device - "+ responseMessage);
 		}
 		else 
 		{
-			current.is_device_present_in_appviewx = "Yes";
+			current.is_device_present_in_appviewx = "Added into AppViewX";
 			gs.addInfoMessage("Device added succesfully in AppViewX");		
 		}
-		current.update();
+		
 	}
 	else if(is_add == "" &&  current.is_device_present_in_appviewx == 'No'){
 		current.is_device_present_in_appviewx = "Not Added";
-		current.update();
 	}
 	else{
 		//
@@ -104,7 +103,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>8d6870131bfe6c102369eb1cad4bcbf1</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>create_other_device_in_appviewx</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -113,7 +112,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_8d6870131bfe6c102369eb1cad4bcbf1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-15 03:03:14</sys_updated_on>
+        <sys_updated_on>2021-03-15 11:12:27</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

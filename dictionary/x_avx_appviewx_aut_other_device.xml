@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="cmdb_ci" label="Other Device" max_length="40" name="x_avx_appviewx_aut_other_device" sizeclass="0" type="collection">
+    <element extends="cmdb_ci" label="Other Device" max_length="40" name="x_avx_appviewx_aut_other_device" sizeclass="4" type="collection">
         <element label="IP Address/FQDN" max_length="40" name="ip_address_fqdn" type="string"/>
         <element label="Is Device present in AppViewX ?" max_length="40" name="is_device_present_in_appviewx" read_only="true" type="string"/>
         <element label="Model" max_length="100" name="model" type="string"/>

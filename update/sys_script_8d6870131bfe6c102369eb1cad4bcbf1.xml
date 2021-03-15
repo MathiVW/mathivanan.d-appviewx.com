@@ -11,14 +11,14 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_avx_appviewx_aut_application_delivery_controllers</collection>
+        <collection>x_avx_appviewx_aut_other_device</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>create_adc_device_in_appviewx</name>
+        <name>create_other_device_in_appviewx</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,12 +29,12 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
 	var dev_name =  current.name;
-	var is_add = "" ;
-	var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
+	var grinv = new GlideRecord('x_avx_appviewx_aut_other_device');
 		grinv.initialize();
 		grinv.addQuery('name',dev_name);
 		grinv.setLimit(1);
 		grinv.query();
+		var is_add = "" ; 
 		while(grinv.next()){
 			if(grinv.name == dev_name){
 				gs.addErrorMessage("Asset name already exists. Try adding with different name.");
@@ -42,7 +42,7 @@
 				is_add = "No";
 			}
 		}
-	var grinv2 = new GlideRecord('x_avx_appviewx_aut_other_device');
+	var grinv2 = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
 		grinv2.initialize();
 		grinv2.addQuery('name',dev_name);
 		grinv2.setLimit(1);
@@ -54,24 +54,22 @@
 				is_add = "No";
 			}
 		}
-	if(is_add == "" && current.device_in_appviewx == 'Add'){
+	if(is_add == "" && current.is_device_present_in_appviewx == 'Add'){
 		var r = new sn_ws.RESTMessageV2();
 		var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
 		var username = gs.getProperty("x_avx_appviewx_aut.Username");
 		var password = gs.getProperty("x_avx_appviewx_aut.Password");
-		r.setEndpoint(url+"/avxapi/adc-add-device?gwkey=f000ca01&gwsource=web");
+		r.setEndpoint(url+"/avxapi/other-device?gwkey=f000ca01&gwsource=web");
 		r.setHttpMethod("post");
 		r.setRequestHeader("username", username);
 		r.setRequestHeader("password", password);
 		r.setRequestHeader("Content-Type", "application/json");
-		var decrypted = current.adc_password.getDecryptedValue();
-		var modules = current.modules.split(",");
-		var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
+		var decrypted = current.password.getDecryptedValue();
+		var payload = {"payload":{"primary":[{"vendor":"","access":[{"userName":"","password":"","accessType":"SSH:22"}],"module":[],"deviceType":[],"deviceCommunicationPort":{"sshPort":22},"name":"","ip":"","model":"","description":"","dataCenter":"","credentialType":"Manual Entry","enablePassword":"","deviceId":"","category":"Others","subsystem":"Others","status":"Inprogress","isAutoDetect":true}],"secondary":[]}};
 		payload.payload.primary[0].access[0].userName = current.username;
 		payload.payload.primary[0].access[0].password = gs.base64Encode(decrypted.toString());
-		payload.payload.primary[0].module = modules;
-		payload.payload.primary[0].ip = current.ip_address;
-		payload.payload.primary[0].vendor = current.adc_vendor;
+		payload.payload.primary[0].model = current.model;
+		payload.payload.primary[0].ip = current.ip_address_fqdn;
 		payload.payload.primary[0].name = current.name;
 		var pay = JSON.stringify(payload);
 		r.setRequestBody(pay);
@@ -82,18 +80,18 @@
 		{
 			responseMessage = response.getErrorMessage();
 			responseBody = response.getBody();
-			current.device_in_appviewx = responseBody;
-			gs.addErrorMessage("Failed to add device - "+ responseBody);
+			current.is_device_present_in_appviewx = responseBody;
+			gs.addErrorMessage("Failed to add device - "+ responseMessage);
 		}
 		else 
 		{
-			current.device_in_appviewx = "Yes";
+			current.is_device_present_in_appviewx = "Yes";
 			gs.addInfoMessage("Device added succesfully in AppViewX");		
 		}
 		current.update();
 	}
-	else if(is_add == "" &&  current.device_in_appviewx == 'No'){
-		current.device_in_appviewx = "Not Added";
+	else if(is_add == "" &&  current.is_device_present_in_appviewx == 'No'){
+		current.is_device_present_in_appviewx = "Not Added";
 		current.update();
 	}
 	else{
@@ -102,20 +100,20 @@
 })(current,previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-03-09 07:37:06</sys_created_on>
+        <sys_created_on>2021-03-15 02:45:10</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>9921c3551bfaa01061858480cd4bcb38</sys_id>
-        <sys_mod_count>53</sys_mod_count>
-        <sys_name>create_adc_device_in_appviewx</sys_name>
+        <sys_id>8d6870131bfe6c102369eb1cad4bcbf1</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>create_other_device_in_appviewx</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
-        <sys_update_name>sys_script_9921c3551bfaa01061858480cd4bcb38</sys_update_name>
+        <sys_update_name>sys_script_8d6870131bfe6c102369eb1cad4bcbf1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-15 03:02:40</sys_updated_on>
+        <sys_updated_on>2021-03-15 03:03:14</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

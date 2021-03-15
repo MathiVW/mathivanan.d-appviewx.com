@@ -8,37 +8,39 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>add_other_device_confirmation</name>
+        <name>make_field_r</name>
         <order/>
-        <script><![CDATA[function onSubmit() {
-	if(g_form.isNewRecord()){
-		var ans = confirm("Do you want to add device into AppViewX?");
-		if (ans == true){
-			g_form.setValue('is_device_present_in_appviewx','Add');
-		}
-		else{
-			g_form.setValue('is_device_present_in_appviewx','No');
-		}
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+   if(g_form.isNewRecord()){
+		//
+	}
+	else{
+		g_form.setReadOnly('ip_address_fqdn', true);
+		g_form.setReadOnly('name',   true);
+		g_form.setReadOnly('username',   true);
+		g_form.setReadOnly('password',   true);
+		g_form.setReadOnly('model',   true);
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-03-11 04:00:14</sys_created_on>
+        <sys_created_on>2021-03-15 03:13:53</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>4434ec821b32a41061858480cd4bcb1f</sys_id>
-        <sys_mod_count>186</sys_mod_count>
-        <sys_name>add_other_device_confirmation</sys_name>
+        <sys_id>bbef709f1bfe6c102369eb1cad4bcb27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>make_field_r</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
-        <sys_update_name>sys_script_client_4434ec821b32a41061858480cd4bcb1f</sys_update_name>
+        <sys_update_name>sys_script_client_bbef709f1bfe6c102369eb1cad4bcb27</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-14 14:30:17</sys_updated_on>
+        <sys_updated_on>2021-03-15 03:13:53</sys_updated_on>
         <table>x_avx_appviewx_aut_other_device</table>
-        <type>onSubmit</type>
+        <type>onLoad</type>
         <ui_type>0</ui_type>
         <view/>
     </sys_script_client>

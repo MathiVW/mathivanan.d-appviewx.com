@@ -4,40 +4,40 @@
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
-        <field>change_control</field>
+        <field>name</field>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>add_other_device_confirmation</name>
+        <name>add_device_confirmation</name>
         <order/>
         <script><![CDATA[function onSubmit() {
 	if(g_form.isNewRecord()){
 		var ans = confirm("Do you want to add device into AppViewX?");
 		if (ans == true){
-			g_form.setValue('is_device_present_in_appviewx','Add');
+			g_form.setValue('device_in_appviewx','Add');
 		}
 		else{
-			g_form.setValue('is_device_present_in_appviewx','No');
+			g_form.setValue('device_in_appviewx','No');
 		}
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-03-11 04:00:14</sys_created_on>
+        <sys_created_on>2021-03-13 06:46:38</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>4434ec821b32a41061858480cd4bcb1f</sys_id>
-        <sys_mod_count>186</sys_mod_count>
-        <sys_name>add_other_device_confirmation</sys_name>
+        <sys_id>3f6d5b261bfa681061858480cd4bcb42</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>add_device_confirmation</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
-        <sys_update_name>sys_script_client_4434ec821b32a41061858480cd4bcb1f</sys_update_name>
+        <sys_update_name>sys_script_client_3f6d5b261bfa681061858480cd4bcb42</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-14 14:30:17</sys_updated_on>
-        <table>x_avx_appviewx_aut_other_device</table>
+        <sys_updated_on>2021-03-14 02:52:29</sys_updated_on>
+        <table>x_avx_appviewx_aut_application_delivery_controllers</table>
         <type>onSubmit</type>
         <ui_type>0</ui_type>
         <view/>

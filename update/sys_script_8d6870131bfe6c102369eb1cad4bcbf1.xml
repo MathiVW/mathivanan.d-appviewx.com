@@ -59,7 +59,7 @@
 		var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
 		var username = gs.getProperty("x_avx_appviewx_aut.Username");
 		var password = gs.getProperty("x_avx_appviewx_aut.Password");
-		r.setEndpoint(url+"/avxapi/other-add-device?gwkey=f000ca01&gwsource=web");
+		r.setEndpoint(url+"/avxapi/others-device?gwkey=f000ca01&gwsource=web");
 		r.setHttpMethod("post");
 		r.setRequestHeader("username", username);
 		r.setRequestHeader("password", password);
@@ -103,7 +103,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>8d6870131bfe6c102369eb1cad4bcbf1</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>create_other_device_in_appviewx</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -112,7 +112,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_8d6870131bfe6c102369eb1cad4bcbf1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-15 11:12:27</sys_updated_on>
+        <sys_updated_on>2021-03-15 11:14:20</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

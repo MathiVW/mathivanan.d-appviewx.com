@@ -10,26 +10,26 @@
         <script><![CDATA[var appviewx_update_inventory = Class.create();
 appviewx_update_inventory.prototype = {
     initialize: function() {},
-	UpdateADCInventroy: function(){
+	UpdateADCInventory: function(){
 		var update_inventory = gs.getProperty("x_avx_appviewx_aut.Sync Inventory");
 		if(update_inventory == "true"){
-			this._ADCInventory();
+			this._AdcInventory();
 			this._OthersInventory();
-			this._CertificateInventory();
+			this._FwInventory();
 			gs.info('Update Completed');
 		}
 		else{
 			gs.info('Update Failed. Update inventory is set to False in Properties');
 		}
 	},
-	_ADCInventory: function() {
+	_AdcInventory: function() {
 		try {
 			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
 				gr.initialize();
 				gr.level = 'Info';
 				gr.script = 'appviewx_update_inventory';
 				gr.application = 'AppViewX';
-				gr.message = 'Getting List of Devices from AppViewX';
+				gr.message = 'Getting List of ADC Devices from AppViewX';
 				gr.insert();
 			var r = new sn_ws.RESTMessageV2();
 			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
@@ -61,7 +61,7 @@ appviewx_update_inventory.prototype = {
 						var access;
 						grinv.addQuery('name',device_name);
 						grinv.query();
-						if(grinv.getRowCount() > 0){
+						if(grinv.hasNext()){
 							while(grinv.next()){
 							if(device[i].ip == ""){
 								grinv.fqdn = device[i].fqdn;
@@ -79,7 +79,6 @@ appviewx_update_inventory.prototype = {
 							access = device[i].access;
 							grinv.username = access[0].userName;
 							grinv.adc_password = access[0].password;
-// 							grinv.device_in_appviewx = "Yes";
 							grinv.update();
 							}
 						}
@@ -109,18 +108,6 @@ appviewx_update_inventory.prototype = {
 						gs.info(exe);
 						}
 				}
-// 				grinv.initialize();
-// 				grinv.query();
-// 				while(grinv.next()){
-// 					var dev_name =  grinv.name.toString();
-// 					if (device_list.indexOf(dev_name) > -1){
-// 						//
-// 						}
-// 					else{
-// 						grinv.device_in_appviewx = "No";
-// 						grinv.update();
-// 					}
-// 					}
 			}
 			else {
 				var responseMessage = response.getErrorMessage();
@@ -134,115 +121,104 @@ appviewx_update_inventory.prototype = {
 				gs.info("Falied");
 		}
 	},
-	_CertificateInventory: function() {
+	_FwInventory: function() {
 		try {
 			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
 				gr.initialize();
 				gr.level = 'Info';
 				gr.script = 'appviewx_update_inventory';
 				gr.application = 'AppViewX';
-				gr.message = 'Getting List of Certificates from AppViewX';
+				gr.message = 'Getting List of Firewall Devices from AppViewX';
 				gr.insert();
 			var r = new sn_ws.RESTMessageV2();
 			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
 			var username = gs.getProperty("x_avx_appviewx_aut.Username");
 			var password = gs.getProperty("x_avx_appviewx_aut.Password");
-			var payload = "{\"payload\":{\"skip\":0,\"limit\":100,\"autoSuggest\":\"false\",\"sort\":{\"_id\":-1},\"category\":\"server\",\"userFilter\":null}}";
+			var payload = "{\"payload\":{}}";
 			r.setHttpMethod("post");
 			r.setRequestHeader("username", username);
 			r.setRequestHeader("password", password);
 			r.setRequestHeader("Content-Type", "application/json");
 			r.setRequestBody(payload);
 			r.setHttpTimeout(10000);
-			r.setEndpoint(url+"/avxapi/cert-server-certificate-inventory-list?gwkey=f000ca01&gwsource=web");
+			r.setEndpoint(url+"/avxapi/firewall-get-devices-by-filter?gwkey=f000ca01&gwsource=web");
 			var response = r.executeAsync();
 			var status  = response.getStatusCode();
 			if (status == 200) {
-				var grinv = new GlideRecord('x_avx_appviewx_aut_certificates');
+				var grinv = new GlideRecord('x_avx_appviewx_aut_firewall_devices');
 				var responseBody = response.getBody();
 				var responsecontent =  JSON.parse(responseBody);
-				var totalrecords = responsecontent.response.totalRecords;
-				for(j = 0 ; j < totalrecords;){
-					payload = "{\"payload\":{\"skip\":" + j + ",\"limit\":100,\"autoSuggest\":\"false\",\"sort\":{\"_id\":-1},\"category\":\"server\",\"userFilter\":null}}";
-					r.setRequestBody(payload);
-					response = r.executeAsync();
-					status  = response.getStatusCode();
-					gs.info('Updating Certificates Inventory... Please wait...');
-					if (status == 200) {
-						responseBody = response.getBody();
-						responsecontent =  JSON.parse(responseBody);
-						var certs = responsecontent.response.data;
-						for(i = 0; i < certs.length; i++){
-							try {
-								grinv.initialize();
-								var commonName = certs[i].commonName;
-								var serialNumber = certs[i].serialNumber;
-								var discoverySources;
-								var expiry_date;
-								var date;
-								grinv.addQuery('common_name',commonName);
-								grinv.addQuery('serial_number',serialNumber);
-								grinv.query();
-								if(grinv.getRowCount() > 0)	{
-									while(grinv.next()) {
-										grinv.common_name = certs[i].commonName;
-										grinv.name = certs[i].commonName;
-										grinv.cert_serialnumber = certs[i].serialNumber;
-										grinv.issuer_common_name = certs[i].issuerCommonName;
-										grinv.status = certs[i].status;
-										expiry_date = certs[i].validTo;
-										date = new Date(expiry_date);
-										grinv.expiry_date = date.toDateString();
-										grinv.certificate_authority = certs[i].certificateAuthority;
-										discoverySources = certs[i].discoverySources;
-										grinv.source = discoverySources.toString();
-										grinv.update();
-									}
-								}
-	
-								else {
-										grinv.common_name = certs[i].commonName;
-										grinv.name = certs[i].commonName;
-										grinv.cert_serialnumber = certs[i].serialNumber;
-										grinv.issuer_common_name = certs[i].issuerCommonName;
-										grinv.status = certs[i].status;
-										expiry_date = certs[i].validTo;
-										date = new Date(expiry_date);
-										grinv.expiry_date = date.toDateString();
-										grinv.certificate_authority = certs[i].certificateAuthority;
-										discoverySources = certs[i].discoverySources;
-										grinv.source = discoverySources.toString() ;
-										grinv.insert();
-								}
+				gs.info('Updating Firewall Inventory... Please wait...');
+				var device = responsecontent.response.data;
+				var device_list = [];
+				for(i = 0; i < device.length; i++){
+					if (device[i].category == "Firewall"){
+					try {
+						grinv.initialize();
+						var device_name = device[i].name;
+						device_list[i] = device_name.toString();
+						var access;
+						grinv.addQuery('name',device_name);
+						grinv.query();
+						if(grinv.hasNext()){
+							while(grinv.next()){
+							if(device[i].ip == ""){
+								grinv.fqdn = device[i].fqdn;
 							}
-
-							catch (exe){
-								gs.info(exe);
-									}
-								}
+							else{
+								grinv.ip_address = device[i].ip;
 							}
-					else {
-								var responseMessage = response.getErrorMessage();
-								responseBody = response.getBody();
-								gs.info(responseBody);
+							grinv.name = device[i].name;
+							grinv.platform = device[i].platform;
+							grinv.fw_vendor = device[i].vendor;
+							grinv.is_device_present_in_appviewx = 'yes';
+							grinv.version = device[i].version;
+							grinv.status = device[i].status;
+							access = device[i].access;
+							grinv.username = access[0].userName;
+							grinv.password = access[0].password;
+							grinv.update();
+							}
 						}
-					j = j + 100;
+						else{
+							if(device[i].ip == ""){
+								grinv.fqdn = device[i].fqdn;
+							}
+							else{
+								grinv.ip_address = device[i].ip;
+							}
+							grinv.name = device[i].name;
+							grinv.platform = device[i].platform;
+							grinv.fw_vendor = device[i].vendor;
+							grinv.is_device_present_in_appviewx = 'already_exists';
+							grinv.version = device[i].version;
+							grinv.status = device[i].status;
+							access = device[i].access;
+							grinv.username = access[0].userName;
+							grinv.adc_password = access[0].password;
+							grinv.device_in_appviewx = "Yes";
+							grinv.insert();
+						}
+						
+					}
+					catch (exe){
+						gs.info(exe);
+						}
 					}
 				}
-			else {
-					responseMessage = response.getErrorMessage();
-					responseBody = response.getBody();
-					gs.info(responseBody);
 			}
-			
+			else {
+				var responseMessage = response.getErrorMessage();
+				responseBody = response.getBody();
+				gs.info(responseBody);
+			}
 		}
 		catch (exe) {
 				gr.message = 'Update Inventory - Failed \n'+ 'Response - ' + exe;
 				gr.insert();
 				gs.info("Falied");
 		}
-	},
-	
+	},	
 	_OthersInventory: function() {
 		try {
 			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
@@ -280,7 +256,7 @@ appviewx_update_inventory.prototype = {
 							var access;
 							grinv.addQuery('name',device_name);
 							grinv.query();
-							if(grinv.getRowCount() > 0){
+							if(grinv.hasNext()){
 								while(grinv.next()){
 									grinv.ip_address_fqdn = device[i].ip;
 									grinv.name = device[i].name;
@@ -321,14 +297,17 @@ appviewx_update_inventory.prototype = {
 				gr.insert();
 				gs.info("Falied");
 		}
-	}
+	},
+	
+	type: 'appviewx_update_inventory'
+	
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-01-07 03:19:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8ca608e91be568d061858480cd4bcb95</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>98</sys_mod_count>
         <sys_name>appviewx_update_inventory</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
@@ -336,6 +315,6 @@ appviewx_update_inventory.prototype = {
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_8ca608e91be568d061858480cd4bcb95</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-14 12:40:20</sys_updated_on>
+        <sys_updated_on>2021-04-02 01:49:13</sys_updated_on>
     </sys_script_include>
 </record_update>

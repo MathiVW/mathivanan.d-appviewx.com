@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_avx_appviewx_aut.appviewx_update_inventory_certificates</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>appviewx_update_inventory_certificates</name>
+        <script><![CDATA[var appviewx_update_inventory_certificates = Class.create();
+appviewx_update_inventory_certificates.prototype = {
+    initialize: function() {},
+	UpdateInventory: function(){
+		var update_inventory = gs.getProperty("x_avx_appviewx_aut.Sync Inventory");
+		if(update_inventory == "true"){
+			this._CertificateInventory();
+			gs.info('Update Completed');
+		}
+		else{
+			gs.info('Update Failed. Update inventory is set to False in Properties');
+		}
+	},
+	_CertificateInventory: function() {
+		try {
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_update_inventory_certificates';
+				gr.application = 'AppViewX';
+				gr.message = 'Getting List of Certificates from AppViewX';
+				gr.insert();
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			var payload = "{\"payload\":{\"skip\":0,\"limit\":100,\"autoSuggest\":\"false\",\"sort\":{\"_id\":-1},\"category\":\"server\",\"userFilter\":null}}";
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			r.setRequestBody(payload);
+			r.setHttpTimeout(10000);
+			r.setEndpoint(url+"/avxapi/cert-server-certificate-inventory-list?gwkey=f000ca01&gwsource=web");
+			var response = r.executeAsync();
+			var status  = response.getStatusCode();
+			if (status == 200) {
+				var grinv = new GlideRecord('x_avx_appviewx_aut_certificates');
+				var responseBody = response.getBody();
+				var responsecontent =  JSON.parse(responseBody);
+				var totalrecords = responsecontent.response.totalRecords;
+				for(j = 0 ; j < totalrecords;){
+					payload = "{\"payload\":{\"skip\":" + j + ",\"limit\":100,\"autoSuggest\":\"false\",\"sort\":{\"_id\":-1},\"category\":\"server\",\"userFilter\":null}}";
+					r.setRequestBody(payload);
+					response = r.executeAsync();
+					status  = response.getStatusCode();
+					gs.info('Updating Certificates Inventory... Please wait...');
+					if (status == 200) {
+						responseBody = response.getBody();
+						responsecontent =  JSON.parse(responseBody);
+						var certs = responsecontent.response.data;
+						for(i = 0; i < certs.length; i++){
+							try {
+								grinv.initialize();
+								var commonName = certs[i].commonName;
+								var serialNumber = certs[i].serialNumber;
+								var discoverySources;
+								var expiry_date;
+								var date;
+								grinv.addQuery('common_name',commonName);
+								grinv.addQuery('cert_serialnumber',serialNumber);
+								grinv.query();
+								if(grinv.hasNext())	{
+									while(grinv.next()) {
+										grinv.common_name = certs[i].commonName;
+										grinv.name = certs[i].commonName;
+										grinv.cert_serialnumber = certs[i].serialNumber;
+										grinv.issuer_common_name = certs[i].issuerCommonName;
+										grinv.status = certs[i].status;
+										expiry_date = certs[i].validTo;
+										date = new Date(expiry_date);
+										grinv.expiry_date = date.toDateString();
+										grinv.certificate_authority = certs[i].certificateAuthority;
+										discoverySources = certs[i].discoverySources;
+										grinv.source = discoverySources.toString();
+										grinv.update();
+									}
+								}
+	
+								else {
+										grinv.common_name = certs[i].commonName;
+										grinv.name = certs[i].commonName;
+										grinv.cert_serialnumber = certs[i].serialNumber;
+										grinv.issuer_common_name = certs[i].issuerCommonName;
+										grinv.status = certs[i].status;
+										expiry_date = certs[i].validTo;
+										date = new Date(expiry_date);
+										grinv.expiry_date = date.toDateString();
+										grinv.certificate_authority = certs[i].certificateAuthority;
+										discoverySources = certs[i].discoverySources;
+										grinv.source = discoverySources.toString() ;
+										grinv.insert();
+								}
+							}
+
+							catch (exe){
+								gs.info(exe);
+									}
+								}
+							}
+					else {
+								var responseMessage = response.getErrorMessage();
+								responseBody = response.getBody();
+								gs.info(responseBody);
+						}
+					j = j + 100;
+					}
+				}
+			else {
+					responseMessage = response.getErrorMessage();
+					responseBody = response.getBody();
+					gs.info(responseBody);
+			}
+			
+		}
+		catch (exe) {
+				gr.message = 'Update Inventory - Failed \n'+ 'Response - ' + exe;
+				gr.insert();
+				gs.info("Falied");
+		}
+	},
+		type: 'appviewx_update_inventory_certificates'
+
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-01 13:18:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7a1de6341bd36c9061858480cd4bcb0d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>appviewx_update_inventory_certificates</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_7a1de6341bd36c9061858480cd4bcb0d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-02 01:55:05</sys_updated_on>
+    </sys_script_include>
+</record_update>

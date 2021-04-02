@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="password" table="x_avx_appviewx_aut_application_delivery_controllers">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="is_device_present_in_appviewx" table="x_avx_appviewx_aut_firewall_devices">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>synchronizePartitions=true</attributes>
+        <attributes/>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -14,7 +14,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Password</column_label>
+        <column_label>Is Device Present in AppViewX ?</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -27,15 +27,15 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>password</element>
+        <element>is_device_present_in_appviewx</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="">password</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>100</max_length>
-        <name>x_avx_appviewx_aut_application_delivery_controllers</name>
+        <max_length>40</max_length>
+        <name>x_avx_appviewx_aut_firewall_devices</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -52,18 +52,18 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-03-09 06:26:29</sys_created_on>
+        <sys_created_on>2021-04-01 12:41:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>4e923e191bf6a01061858480cd4bcbe4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Password</sys_name>
+        <sys_id>78446abc1b936c9061858480cd4bcb2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Is Device Present in AppViewX ?</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
-        <sys_update_name>sys_dictionary_x_avx_appviewx_aut_application_delivery_controllers_password</sys_update_name>
+        <sys_update_name>sys_dictionary_x_avx_appviewx_aut_firewall_devices_is_device_present_in_appviewx</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-09 09:56:33</sys_updated_on>
+        <sys_updated_on>2021-04-01 12:41:16</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <u_pre_production_testing/>

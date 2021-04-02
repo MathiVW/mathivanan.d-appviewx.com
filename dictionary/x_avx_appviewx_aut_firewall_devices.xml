@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci" label="Firewall Devices" max_length="40" name="x_avx_appviewx_aut_firewall_devices" sizeclass="5" type="collection">
+        <element label="Firewall Vendor" max_length="40" name="firewall_vendor" type="string"/>
+        <element label="Vendor" max_length="40" name="fw_vendor" type="string"/>
+        <element label="Is Device Present in AppViewX ?" max_length="40" name="is_device_present_in_appviewx" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Password" max_length="255" name="password" type="password2"/>
+        <element label="Platform" max_length="40" name="platform" type="string"/>
+        <element label="Status" max_length="40" name="status" type="string"/>
+        <element label="Username" max_length="40" name="username" type="string"/>
+        <element label="Version" max_length="40" name="version" type="string"/>
+    </element>
+</database>

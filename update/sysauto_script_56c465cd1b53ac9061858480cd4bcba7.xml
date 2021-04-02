@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition><![CDATA[var update_inventory = gs.getProperty("x_avx_appviewx_aut.Sync Inventory");
+gs.info("Executing");
+update_inventory;]]></condition>
+        <conditional>true</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Update Certificate Inventory Schedule</name>
+        <run_as/>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>7</run_dayofweek>
+        <run_period/>
+        <run_start>2021-04-02 02:39:06</run_start>
+        <run_time>1970-01-01 00:00:00</run_time>
+        <run_type>weekly</run_type>
+        <script><![CDATA[new x_avx_appviewx_aut.appviewx_update_inventory_certificates().UpdateInventory();]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-02 02:40:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>56c465cd1b53ac9061858480cd4bcba7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Update Certificate Inventory Schedule</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sysauto_script_56c465cd1b53ac9061858480cd4bcba7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-02 02:41:03</sys_updated_on>
+        <time_zone>floating</time_zone>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

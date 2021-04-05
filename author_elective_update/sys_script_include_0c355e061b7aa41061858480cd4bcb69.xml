@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_avx_appviewx_aut.create_adc_bkp</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>create_adc_bkp</name>
+        <script><![CDATA[var create_adc_bkp = Class.create();
+create_adc_bkp.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	duplicateNameCheck: function() {
+		var dev_name =  this.getParameter('sysparm_device_name');
+		var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
+			grinv.initialize();
+			grinv.addQuery('name',dev_name);
+			grinv.query();
+			while(grinv.next()){
+				if(grinv.name == dev_name){
+					return false;
+				}
+			}
+			return true;
+	},
+	
+	addAdcDevice: function() 
+		{		
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+"/avxapi/adc-add-device?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var mod = this.getParameter('sysparm_modules');
+			var decrypted = this.getParameter('sysparm_password');
+			var modules = mod.split(",");
+			var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
+			payload.payload.primary[0].access[0].userName = this.getParameter('sysparm_username');
+			payload.payload.primary[0].access[0].password = decrypted.toString();
+			payload.payload.primary[0].module = modules;
+			payload.payload.primary[0].ip = this.getParameter('sysparm_ip');
+			payload.payload.primary[0].vendor = this.getParameter('sysparm_vendor');
+			payload.payload.primary[0].name = this.getParameter('sysparm_device_name');
+			var pay = JSON.stringify(payload);
+			r.setRequestBody(pay);
+			r.setHttpTimeout(5000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var answer = "Done";
+			if (response.haveError())
+				{
+					answer = "Failed to add device into AppViewX";
+				}
+			else 
+				{
+					answer =  "Device added into AppViewX";				
+				}
+			this.getRootElement().setAttribute('answer', answer);
+			},
+    type: 'create_adc_bkp'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-11 12:18:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0c355e061b7aa41061858480cd4bcb69</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>create_adc_bkp</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_0c355e061b7aa41061858480cd4bcb69</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-14 03:18:58</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_script_include_0c355e061b7aa41061858480cd4bcb69</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;false&lt;/active&gt;&lt;api_name&gt;x_avx_appviewx_aut.create_adc_bkp&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;create_adc_bkp&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var create_adc_bkp = Class.create();
+create_adc_bkp.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	duplicateNameCheck: function() {
+		var dev_name =  this.getParameter('sysparm_device_name');
+		var grinv = new GlideRecord('x_avx_appviewx_aut_application_delivery_controllers');
+			grinv.initialize();
+			grinv.addQuery('name',dev_name);
+			grinv.query();
+			while(grinv.next()){
+				if(grinv.name == dev_name){
+					return false;
+				}
+			}
+			return true;
+	},
+	
+	addAdcDevice: function() 
+		{		
+			var r = new sn_ws.RESTMessageV2();
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+"/avxapi/adc-add-device?gwkey=f000ca01&amp;gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var mod = this.getParameter('sysparm_modules');
+			var decrypted = this.getParameter('sysparm_password');
+			var modules = mod.split(",");
+			var payload = {"payload":{"primary":[{"vendor":" F5 ","access":[{"userName":" ","password":"","accessType":""}],"module":["LTM"],"deviceType":[],"deviceCommunicationPort":{"sshPort":"22"},"isHostedOnVcmp":false,"isHostedOnHypervisor":false,"autoSyncEnabled":true,"name":"device","dataCenter":"","communicationAddressType":"ip","ip":"1.2.3.3","manageCertificate":"Managed","credentialType":"Manual Entry","tokenBasedAuthentication":false,"_id":"","category":"ADC","subsystem":"LoadBalancer","status":"Inprogress","syncFailoverGroupName":"","isAutoDetect":true,"noDetect":false}],"secondary":[]}};
+			payload.payload.primary[0].access[0].userName = this.getParameter('sysparm_username');
+			payload.payload.primary[0].access[0].password = decrypted.toString();
+			payload.payload.primary[0].module = modules;
+			payload.payload.primary[0].ip = this.getParameter('sysparm_ip');
+			payload.payload.primary[0].vendor = this.getParameter('sysparm_vendor');
+			payload.payload.primary[0].name = this.getParameter('sysparm_device_name');
+			var pay = JSON.stringify(payload);
+			r.setRequestBody(pay);
+			r.setHttpTimeout(5000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var answer = "Done";
+			if (response.haveError())
+				{
+					answer = "Failed to add device into AppViewX";
+				}
+			else 
+				{
+					answer =  "Device added into AppViewX";				
+				}
+			this.getRootElement().setAttribute('answer', answer);
+			},
+    type: 'create_adc_bkp'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-03-11 12:18:07&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_id&gt;0c355e061b7aa41061858480cd4bcb69&lt;/sys_id&gt;&lt;sys_mod_count&gt;47&lt;/sys_mod_count&gt;&lt;sys_name&gt;create_adc_bkp&lt;/sys_name&gt;&lt;sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="AppViewX Automation+"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_0c355e061b7aa41061858480cd4bcb69&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-03-14 03:18:58&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>301854266</payload_hash>
+        <record_name>create_adc_bkp</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-14 03:18:58</sys_created_on>
+        <sys_id>51b77ffa1b36e81061858480cd4bcb71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1782ebe7bf40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-14 03:18:58</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>59b77ffae336e810ddf295de01697a70</update_guid>
+        <update_guid_history>59b77ffae336e810ddf295de01697a70:301854266,39bb032e577a6810399de723dfc22921:-1389104713,0a07f3ded8f62810688a48f96e33b996:1944267699,2786b71e94f62810ebffab9a193c8f85:-2122071348,7436bfdae9f62810692a76a1b1098339:-158319513,1494771ef3f62810235c4d3a5feaacf8:-672266764,a1eee7d21cf628107b55ee1fdc1643b9:-490569665,a7aea752a9f628108e055abcd7eb26db:28129631,4d7dab527ff628106beca3a4540d4c81:-863852875,48c56f5655b62810796ed988f5e8799b:-746860091,5b116f9ec67268105a2fca7971e8f548:-455036922,7bd8b61a3abe281083cabcce9aabb8d4:-1818602897,1f6832d675be281038ef87e5356d8d89:-1899335181,b318fe123abe2810907d589ace9c820e:1687896918,3154f6de617e281052eb0966afe93894:-776793051,ad0432121ebe281014ef8e6db583a4ee:-218220101,26a33e1e157e2810a725044627c7d28b:-725880930,2fc23a1e0c7e2810525eeb55905f4fe0:-1871532080,b2e1b21e297e2810d61d1220a20e00ab:-205547243,d3b1b21e317e28109bd3ac09e0b5122a:707137369,c640be1a4a7e281054d78440ffae8ca4:743938759,badf66d68d7e2810ab8ff598ab2bfe79:-400895162,f3dea2d6d97e2810fc8603f0feb5d1d1:-1030753726,a3cc2a92c47e28107100e071de48d5c2:-1919172324,462c2e52f07e2810c721ea381a7f7c8c:-864567815,6acbea52867e28102f5593380fd9c377:1666138327,c8ab6a12e07e2810dba559b92a02488d:2042840125,7a4b6e12b57e2810ded0e81163d6556d:-1245180639,ffe9e69e183e2810bc991c4f2b70b76d:2042840125,6489e25e423e28102af4570bfe4c4f93:754123163,7512eedeb6322810080bc04303381008:-1311301412,b5a162dedc322810520476fb359c336f:-1543574053,6b31ee9eb232281021267b0972a7807c:872386173,09112e9ed9322810fafe23fb6c7b5139:1279794160,64506a1e193228103ce9c83cc34299a9:158788260,221f561e55322810c5a9f458be23a441:-1279038137,b46e1adae3322810165e8b5b298b3e16:-1883417712,00bb16d6c8322810faa039ff48b5904b:-1647259367,a22b16561c3228102dad21af3d9e674b:-876364741,0ec91ad2cf3228100c523fbc80d4e8b0:-1647259367,26d4565ed1fee410b3047da6bd922258:1014851718,0c549adaf6fee4101f681e7acdcbfe69:-41455449,3e449e9ad4fee410cf133cee018aaff4:850406826,c53396da99fee410a7ab14fe158c7120:421372674,39821a9adafee410a1af66c3f09ca53a:-41455449,d261de96cffee410fef5d9de7730a668:-1486662369,a76a1a4aa27aa410eb3b363225231fcc:467934855,f556d286ce7aa4106fcb69a8911e1ae2:-821063471</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-05 13:56:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>04a81a0afee44b02a7c76301d4e522e4</sys_id>
+        <sys_metadata>0c355e061b7aa41061858480cd4bcb69</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>create_adc_bkp</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_script_include_0c355e061b7aa41061858480cd4bcb69</sys_update_name>
+        <sys_update_version display_value="sys_script_include_0c355e061b7aa41061858480cd4bcb69">51b77ffa1b36e81061858480cd4bcb71</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-05 13:56:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="cmdb_ci" label="Application Delivery Controllers" max_length="40" name="x_avx_appviewx_aut_application_delivery_controllers" sizeclass="22" type="collection">
+    <element extends="cmdb_ci" label="Application Delivery Controllers" max_length="40" name="x_avx_appviewx_aut_application_delivery_controllers" sizeclass="8" type="collection">
         <element attributes="synchronizePartitions=true" label="Password" max_length="255" name="adc_password" type="password2"/>
         <element attributes="synchronizePartitions=true" label="Vendor" max_length="100" name="adc_vendor" type="string"/>
         <element label="Is Device Present in AppViewX ?" max_length="40" name="device_in_appviewx" read_only="true" type="string"/>

@@ -29,7 +29,7 @@
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
         <module/>
-        <name>Create New Certificate Request</name>
+        <name>Enroll Certificate</name>
         <no_attachment_v2>false</no_attachment_v2>
         <no_cart>false</no_cart>
         <no_cart_v2>false</no_cart_v2>
@@ -62,15 +62,15 @@
         <sys_created_on>2020-01-06 12:59:48</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>367f776b1b0208542369eb1cad4bcb36</sys_id>
-        <sys_mod_count>31</sys_mod_count>
-        <sys_name>Create New Certificate Request</sys_name>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Enroll Certificate</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sc_cat_item_content_367f776b1b0208542369eb1cad4bcb36</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-01-06 13:20:39</sys_updated_on>
+        <sys_updated_on>2021-05-24 03:43:53</sys_updated_on>
         <target>internal</target>
         <template/>
         <type>item</type>

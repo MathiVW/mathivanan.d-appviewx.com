@@ -72,7 +72,7 @@
         <table/>
         <tooltip/>
         <type>2</type>
-        <ui_page display_value="Add_Attachment_UI">a9b037331bc8bc1061858480cd4bcb03</ui_page>
+        <ui_page/>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <validate_regex/>

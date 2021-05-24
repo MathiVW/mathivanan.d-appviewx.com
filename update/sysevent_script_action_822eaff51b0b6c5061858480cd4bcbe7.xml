@@ -15,10 +15,18 @@ function execute_sync(){
 	gr.application = 'AppViewX';
 	gr.message = 'Triggering Inventory Sync';
 	gr.insert();
-	new x_avx_appviewx_aut.appviewx_update_inventory().UpdateADCInventory();
-	new x_avx_appviewx_aut.appviewx_update_inventory_certificates().UpdateInventory();
-	gr.message = 'Inventory Sync Completed';
-	gr.insert();
+	var update_inventory = gs.getProperty("x_avx_appviewx_aut.Sync Inventory");
+	if(update_inventory == true){
+			new x_avx_appviewx_aut.appviewx_update_inventory().UpdateADCInventory();
+			new x_avx_appviewx_aut.appviewx_update_inventory_certificates().UpdateInventory();
+			gr.message = 'Inventory Sync Completed';
+			gr.insert();
+	}
+	else{
+		gr.message = 'Inventory Sync is not enabled in properties';
+		gr.insert();
+	}
+
 }
 ]]></script>
         <synchronous>false</synchronous>
@@ -28,7 +36,7 @@ function execute_sync(){
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>822eaff51b0b6c5061858480cd4bcbe7</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>sync_inventory</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -37,6 +45,6 @@ function execute_sync(){
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sysevent_script_action_822eaff51b0b6c5061858480cd4bcbe7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-04-02 02:19:09</sys_updated_on>
+        <sys_updated_on>2021-05-24 07:46:29</sys_updated_on>
     </sysevent_script_action>
 </record_update>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
     <sc_cat_item_catalog action="INSERT_OR_UPDATE">
-        <sc_cat_item display_value="Create New Certificate Request">367f776b1b0208542369eb1cad4bcb36</sc_cat_item>
+        <sc_cat_item display_value="Enroll Certificate">367f776b1b0208542369eb1cad4bcb36</sc_cat_item>
         <sc_catalog display_value="AppViewX Catalog">2eb4c0301be1885061858480cd4bcb52</sc_catalog>
         <sys_class_name>sc_cat_item_catalog</sys_class_name>
         <sys_created_by>admin</sys_created_by>

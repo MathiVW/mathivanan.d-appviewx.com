@@ -2,7 +2,7 @@
     <sc_catalog action="INSERT_OR_UPDATE">
         <active>true</active>
         <background_color>white</background_color>
-        <description>Low-Code Automation for NetOps and SecOps</description>
+        <description>Crypto, Infrastructure Automation and Orchestration</description>
         <desktop_continue_shopping/>
         <desktop_home_page/>
         <desktop_image>0aff2af81b75c0d02369eb1cad4bcb62</desktop_image>
@@ -14,7 +14,7 @@
         <sys_created_on>2019-12-03 08:48:53</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2eb4c0301be1885061858480cd4bcb52</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>AppViewX Catalog</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
@@ -22,7 +22,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sc_catalog_2eb4c0301be1885061858480cd4bcb52</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-01-09 09:11:30</sys_updated_on>
+        <sys_updated_on>2021-05-24 03:54:36</sys_updated_on>
         <title>AppViewX Catalog</title>
     </sc_catalog>
     <sys_translated_text action="delete_multiple" query="documentkey=2eb4c0301be1885061858480cd4bcb52"/>

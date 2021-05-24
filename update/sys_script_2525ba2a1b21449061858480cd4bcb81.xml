@@ -69,7 +69,7 @@
 		group = gs.getProperty("x_avx_appviewx_aut.digi_group");
 		var divisionId = gs.getProperty("x_avx_appviewx_aut.digi_division");
 		var certtype = current.certificate_type;
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"DigiCert\",\"divisionId\":\""+divisionId+"\",\"caSettingName\":\""+settingName+"\",\"certificateType\":\""+certtype+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{}}}";
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"DigiCert\",\"divisionId\":\""+divisionId+"\",\"caSettingName\":\""+settingName+"\",\"certificateType\":\""+certtype+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":\""+validity+"\",\"vendorSpecificDetails\":{}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -82,7 +82,7 @@
 		group = gs.getProperty("x_avx_appviewx_aut.sectigo_group");
 		certtype = current.certificate_type;
 		validity = gs.getProperty("x_avx_appviewx_aut.sectigo_validity");
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Comodo Certificate Manager\",\"caSettingName\":\""+settingName+"\",\"certificateType\":\""+certtype+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{}}}";
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Comodo Certificate Manager\",\"caSettingName\":\""+settingName+"\",\"certificateType\":\""+certtype+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":\""+validity+"\",\"vendorSpecificDetails\":{}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -95,8 +95,7 @@
 		key = gs.getProperty("x_avx_appviewx_aut.msetps_key");
 		group = gs.getProperty("x_avx_appviewx_aut.msetps_group");
 		validity = gs.getProperty("x_avx_appviewx_aut.msetps_validity");
-		certtype = current.certificate_type;
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Microsoft Enterprise\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{\"templateName\": \"WebServer\"}}}";
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Microsoft Enterprise\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":\""+validity+"\",\"vendorSpecificDetails\":{\"templateName\": \"WebServer\"}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -108,7 +107,8 @@
 		key = gs.getProperty("x_avx_appviewx_aut.godaddy_key");
 		group = gs.getProperty("x_avx_appviewx_aut.godaddy_group");
 		validity = gs.getProperty("x_avx_appviewx_aut.godaddy_validity");
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"GoDaddy\",\"certificateType\":\""+certtype+"\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{}}}";
+		certtype = current.certificate_type;
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"GoDaddy\",\"certificateType\":\""+certtype+"\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":\""+validity+"\",\"vendorSpecificDetails\":{}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -120,7 +120,7 @@
 		key = gs.getProperty("x_avx_appviewx_aut.ejbca_key");
 		group = gs.getProperty("x_avx_appviewx_aut.ejbca_group");
 		validity = gs.getProperty("x_avx_appviewx_aut.ejbca_validity");
-		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Ejbca\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":"+validity+",\"vendorSpecificDetails\":{}}}";
+		payload = "{\"csrGenerationSource\":\"appviewx\",\"certificateGroup\":{\"name\":\""+group+"\"},\"caConnectorInfo\":{\"certificateAuthority\":\"Ejbca\",\"caSettingName\":\""+settingName+"\",\"csrParameters\":{\"commonName\":\""+cn+"\",\"encryptedChallengePassword\":\"\",\"hashFunction\":\""+hash+"\",\"keyType\":\""+key+"\",\"bitLength\":\""+bit_length+"\",\"certificateCategories\":[\"Server\",\"Client\"],\"enhancedSANTypes\":{\"dNSNames\":[\""+san+"\"]}},\"validityInDays\":\""+validity+"\",\"vendorSpecificDetails\":{}}}";
 		gr.message = 'Generated Payload \n ' + payload;
 		gr.insert();
 	}
@@ -183,7 +183,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>2525ba2a1b21449061858480cd4bcb81</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>new_certificate_request</sys_name>
         <sys_overrides/>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
@@ -192,7 +192,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_script_2525ba2a1b21449061858480cd4bcb81</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-05-24 02:58:19</sys_updated_on>
+        <sys_updated_on>2021-05-24 03:10:29</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -2,7 +2,7 @@
     <sys_properties_category_m2m action="INSERT_OR_UPDATE">
         <category display_value="EJBCA">fb310abc1b50b0502369eb1cad4bcb35</category>
         <order>3</order>
-        <property display_value="x_avx_appviewx_aut.ejbcao_key" name="x_avx_appviewx_aut.ejbcao_key">a54e86341b54b0502369eb1cad4bcb92</property>
+        <property display_value="x_avx_appviewx_aut.ejbca_key" name="x_avx_appviewx_aut.ejbca_key">a54e86341b54b0502369eb1cad4bcb92</property>
         <sys_class_name>sys_properties_category_m2m</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-05-21 04:05:28</sys_created_on>

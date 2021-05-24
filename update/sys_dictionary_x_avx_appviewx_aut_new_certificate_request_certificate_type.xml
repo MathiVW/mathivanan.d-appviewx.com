@@ -17,7 +17,7 @@
         <column_label>Certificate Type</column_label>
         <comments/>
         <create_roles/>
-        <default_value>SSL Plus</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -55,7 +55,7 @@
         <sys_created_on>2019-12-09 07:34:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>baec2e2a1bed049061858480cd4bcbdf</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Certificate Type</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
@@ -63,7 +63,7 @@
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sys_dictionary_x_avx_appviewx_aut_new_certificate_request_certificate_type</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-17 06:28:38</sys_updated_on>
+        <sys_updated_on>2021-05-24 02:28:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <u_pre_production_testing/>

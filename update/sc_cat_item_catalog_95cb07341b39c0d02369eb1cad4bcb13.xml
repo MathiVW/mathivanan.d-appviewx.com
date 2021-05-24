@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
     <sc_cat_item_catalog action="INSERT_OR_UPDATE">
-        <sc_cat_item display_value="Create virtual server in BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</sc_cat_item>
+        <sc_cat_item display_value="Create Virtual Server on F5 BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</sc_cat_item>
         <sc_catalog display_value="AppViewX Catalog">2eb4c0301be1885061858480cd4bcb52</sc_catalog>
         <sys_class_name>sc_cat_item_catalog</sys_class_name>
         <sys_created_by>admin</sys_created_by>

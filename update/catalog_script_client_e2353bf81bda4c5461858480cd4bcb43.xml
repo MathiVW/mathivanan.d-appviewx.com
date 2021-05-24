@@ -7,7 +7,7 @@
         <applies_sc_task>false</applies_sc_task>
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
-        <cat_item display_value="Create virtual server in BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</cat_item>
+        <cat_item display_value="Create Virtual Server on F5 BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</cat_item>
         <cat_variable/>
         <condition/>
         <description/>

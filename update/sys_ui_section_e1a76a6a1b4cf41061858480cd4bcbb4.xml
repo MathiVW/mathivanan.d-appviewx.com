@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="e1a76a6a1b4cf41061858480cd4bcbb4" sys_domain="global" table="incident" version="3" view="SP_Global_Certificate_Create">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_field_name_1</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-05-14 06:09:12</sys_created_on>
+            <sys_id>61a7aa6a1b4cf41061858480cd4bcb81</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="8de0aaae1b0cf41061858480cd4bcb44">e1a76a6a1b4cf41061858480cd4bcbb4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-05-14 06:09:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>incident</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-05-14 06:09:12</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>e1a76a6a1b4cf41061858480cd4bcbb4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>incident</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+            <sys_update_name>sys_ui_section_e1a76a6a1b4cf41061858480cd4bcbb4</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-05-14 06:09:12</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="SP Global Certificate Create" name="SP_Global_Certificate_Create">8de0aaae1b0cf41061858480cd4bcb44</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -15,7 +15,7 @@
         <flow_designer_flow/>
         <group/>
         <hide_sp>false</hide_sp>
-        <icon/>
+        <icon>f6ea6c301ba3ec1061858480cd4bcb9d</icon>
         <ignore_price>true</ignore_price>
         <image/>
         <list_price>0</list_price>
@@ -26,7 +26,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Create virtual server in BIG-IP LTM</name>
+        <name>Create Virtual Server on F5 BIG-IP LTM</name>
         <no_attachment_v2>false</no_attachment_v2>
         <no_cart>false</no_cart>
         <no_cart_v2>false</no_cart_v2>
@@ -59,15 +59,15 @@
         <sys_created_on>2019-12-16 09:34:03</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9a6b0bf01b39c0d02369eb1cad4bcb89</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Create virtual server in BIG-IP LTM</sys_name>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Create Virtual Server on F5 BIG-IP LTM</sys_name>
         <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
         <sys_update_name>sc_cat_item_9a6b0bf01b39c0d02369eb1cad4bcb89</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-01-06 07:27:18</sys_updated_on>
+        <sys_updated_on>2021-04-13 14:03:29</sys_updated_on>
         <template/>
         <type>item</type>
         <u_target>Internal</u_target>

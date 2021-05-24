@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">cat_item=06242a531bc8f81061858480cd4bcb93^EQ<item display_table="sc_cat_item" display_value="Easy Certificate Provisioning" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="06242a531bc8f81061858480cd4bcb93"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>appviewx_sc_easy_cert_provisioning</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var commonName = current.hierarchical_variables.common_name;
+			var device_type = current.hierarchical_variables.device_type;
+			var device_name = current.hierarchical_variables.device;
+			var ssl_profile_dr = current.hierarchical_variables.ssl_profile_dr;
+			var obj_bind = [{"device_name":device_name,"ssl_profile_dr":ssl_profile_dr}];
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+"/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload;
+			payload = "{\"payload\":{\"data\":{\"input\":{\"requestData\":[{\"sequenceNo\":1,\"scenario\":\"scenario\",\"fieldInfo\":{\"ritm\":\""+current.number+"\",\"san\":\""+commonName+"\",\"commonName\":\""+commonName+"\",\"device_name\":\""+device_name+"\",\"ssl_profile_dr\":\""+ssl_profile_dr+"\",\"device_type\":\""+device_type+"\",\"obj_bind\":[{\"device_name\":\""+device_name+"\",\"ssl_profile_dr\":\""+ssl_profile_dr+"\"}]}}]},\"task_action\":1},\"header\":{\"workflowName\":\"Easy Certificate Provisioning\"}}}";
+			r.setRequestBody(payload);
+			r.setHttpTimeout(10000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'appviewx_sc_easy_cert_provisioning';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for catalog request with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						var res = JSON.stringify(responseBody);
+						gr.level = 'Error';
+						gr.script = 'appviewx_sc_infoblox_record_creation';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+						current.setValue('request_response',res);
+						current.hierarchical_variables.request_response = res;
+						current.update();
+			
+				}
+			else 
+				{
+					responseBody = response.getBody();
+						gr.level = 'Info';
+						gr.script = 'appviewx_sc_easy_cert_provisioning';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+					current.setValue('request_response',res);
+					current.hierarchical_variables.request_response = res;
+					current.update();
+					
+			
+					
+				}
+				
+			}		
+)(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-16 15:39:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>a7dbb2df1b0cf81061858480cd4bcb66</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>appviewx_sc_easy_cert_provisioning</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_a7dbb2df1b0cf81061858480cd4bcb66</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-24 03:02:15</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+</record_update>

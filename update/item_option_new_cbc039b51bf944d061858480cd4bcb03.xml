@@ -2,7 +2,7 @@
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
         <attributes/>
-        <cat_item display_value="Create virtual server in BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</cat_item>
+        <cat_item display_value="Create Virtual Server on F5 BIG-IP LTM">9a6b0bf01b39c0d02369eb1cad4bcb89</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
         <choice_field/>

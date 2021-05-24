@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="GoDaddy">7f014a301b14b0502369eb1cad4bcb05</category>
+        <order>0</order>
+        <property display_value="x_avx_appviewx_aut.godaddy_ca_settingName" name="x_avx_appviewx_aut.godaddy_ca_settingName">0ceb0a3c1b14b0502369eb1cad4bcbb8</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-21 04:07:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6aee02b41b54b0502369eb1cad4bcb91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_avx_appviewx_aut.godaddy_ca_settingName.GoDaddy</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_6aee02b41b54b0502369eb1cad4bcb91</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-21 04:07:38</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

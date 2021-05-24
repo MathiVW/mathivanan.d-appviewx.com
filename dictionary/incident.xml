@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="email_client=true,text_index_translations=true,query_hints=true,hasWorkflow=true,live_feed=true" audit="true" extends="task" label="Incident" max_length="40" name="incident" sizeclass="11407" text_index="true" type="collection">
+        <element label="Customer Name" max_length="80" name="x_avx_appviewx_aut_u_field_name_1" type="field_name"/>
+        <element label="Customer Email" max_length="80" name="x_avx_appviewx_aut_u_field_name_2" type="field_name"/>
+        <element label="Customer Contact Number" max_length="80" name="x_avx_appviewx_aut_u_field_name_3" type="field_name"/>
+        <element label="Group Email ID" max_length="80" name="x_avx_appviewx_aut_u_field_name_4" type="field_name"/>
+    </element>
+</database>

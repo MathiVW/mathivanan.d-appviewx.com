@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_avx_appviewx_aut_new_certificate_request">certificate_authorityNOT INAppViewX,Microsoft Enterprise,EJBCA^EQ<item display_value="AppViewX,Microsoft Enterprise,EJBCA" endquery="false" field="certificate_authority" goto="false" newquery="false" operator="NOT IN" or="false" value="AppViewX,Microsoft Enterprise,EJBCA"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+	g_form.clearOptions('certificate_type');
+	g_form.addOption('certificate_type','SSL Plus','SSL Plus');
+	g_form.addOption('certificate_type','SSL Wildcart','SSL Wildcart');
+	g_form.addOption('certificate_type','SSL EV Plus','SSL EV Plus');
+	g_form.addOption('certificate_type','SSL Multi Domain','SSL Multi Domain');
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+	var cert = g_form.getValue('certificate_authority');
+	g_form.clearOptions('certificate_type');
+	if(cert == "Sectigo"){
+// 		g_form.clearOptions('certificate_type');
+		g_form.addOption('certificate_type','Sectigo Multi-Domain SSL','Sectigo Multi-Domain SSL');
+	}
+	else if(cert == "GoDaddy"){
+// 		g_form.clearOptions('certificate_type');
+		g_form.addOption('certificate_type','Standard SSL (DV_SSL)','Standard SSL (DV_SSL)');
+		g_form.addOption('certificate_type','Deluxe SSL (OV_SSL)','Deluxe SSL (OV_SSL)');
+		g_form.addOption('certificate_type','Premium SSL (EV_SSL)','Premium SSL (EV_SSL)');
+	}
+	else if(cert == "DigiCert"){
+// 		g_form.clearOptions('certificate_type');
+		g_form.addOption('certificate_type','SSL Plus','SSL Plus');
+		g_form.addOption('certificate_type','SSL Wildcart','SSL Wildcart');
+		g_form.addOption('certificate_type','SSL EV Plus','SSL EV Plus');
+		g_form.addOption('certificate_type','SSL Multi Domain','SSL Multi Domain');
+	}
+
+}]]></script_true>
+        <set_values/>
+        <short_description>Display Cert Type</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-13 11:02:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>bfbd125a1b04b41061858480cd4bcb9a</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Display Cert Type</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_policy_bfbd125a1b04b41061858480cd4bcb9a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-24 02:31:34</sys_updated_on>
+        <table>x_avx_appviewx_aut_new_certificate_request</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

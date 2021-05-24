@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>certificate_authority</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Show cert types</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	var cert = g_form.getValue('certificate_authority');
+	g_form.clearOptions('certificate_type');
+	if(cert == "Sectigo"){
+		g_form.addOption('certificate_type','Sectigo Multi-Domain SSL','Sectigo Multi-Domain SSL');
+	}
+	else if(cert == "GoDaddy"){
+		g_form.addOption('certificate_type','Standard SSL (DV_SSL)','Standard SSL (DV_SSL)');
+		g_form.addOption('certificate_type','Deluxe SSL (OV_SSL)','Deluxe SSL (OV_SSL)');
+		g_form.addOption('certificate_type','Premium SSL (EV_SSL)','Premium SSL (EV_SSL)');
+	}
+	else if(cert == "DigiCert"){
+		g_form.addOption('certificate_type','SSL Plus','SSL Plus');
+		g_form.addOption('certificate_type','SSL Wildcart','SSL Wildcart');
+		g_form.addOption('certificate_type','SSL EV Plus','SSL EV Plus');
+		g_form.addOption('certificate_type','SSL Multi Domain','SSL Multi Domain');
+	}
+	else if(cert == "AppViewX" | cert == "Microsoft Enterprise" | cert == "EJBCA"){
+		g_form.setDisplay("certificate_type", false);
+	}
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-24 02:33:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>0ef555311b58f4502369eb1cad4bcb53</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Show cert types</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_client_0ef555311b58f4502369eb1cad4bcb53</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-24 02:39:09</sys_updated_on>
+        <table>x_avx_appviewx_aut_new_certificate_request</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

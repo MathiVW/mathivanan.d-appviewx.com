@@ -5,7 +5,7 @@
         <calendar/>
         <condition table="sc_req_item">cat_item=81db83bc1bf5c0d02369eb1cad4bcbc6^ORcat_item=1cfb07341b39c0d02369eb1cad4bcb76^ORcat_item=9a6b0bf01b39c0d02369eb1cad4bcb89^EQ<item display_table="sc_cat_item" display_value="Infoblox - Create DNS Records" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="81db83bc1bf5c0d02369eb1cad4bcbc6"/>
             <item display_table="sc_cat_item" display_value="Generate AppViewX Certificate" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="true" value="1cfb07341b39c0d02369eb1cad4bcb76"/>
-            <item display_table="sc_cat_item" display_value="Create virtual server in BIG-IP LTM" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="true" value="9a6b0bf01b39c0d02369eb1cad4bcb89"/>
+            <item display_table="sc_cat_item" display_value="Create Virtual Server on F5 BIG-IP LTM" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="true" value="9a6b0bf01b39c0d02369eb1cad4bcb89"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
         <name>AppViewX Catalog Item</name>

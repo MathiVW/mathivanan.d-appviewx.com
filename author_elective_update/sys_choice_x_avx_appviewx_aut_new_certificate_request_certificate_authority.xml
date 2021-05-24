@@ -90,5 +90,59 @@
             <sys_updated_on>2019-12-11 10:45:31</sys_updated_on>
             <value>Microsoft Enterprise</value>
         </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>certificate_authority</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sectigo</label>
+            <language>en</language>
+            <name>x_avx_appviewx_aut_new_certificate_request</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-05-13 10:45:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>c96d5a1a1b04b41061858480cd4bcb83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-05-13 10:45:54</sys_updated_on>
+            <value>Sectigo</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>certificate_authority</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>GoDaddy</label>
+            <language>en</language>
+            <name>x_avx_appviewx_aut_new_certificate_request</name>
+            <sequence>4</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-05-21 05:46:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>53a56e781bd4b0502369eb1cad4bcb38</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-05-21 05:46:54</sys_updated_on>
+            <value>GoDaddy</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>certificate_authority</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EJBCA</label>
+            <language>en</language>
+            <name>x_avx_appviewx_aut_new_certificate_request</name>
+            <sequence>5</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-05-21 05:46:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>53a56e781bd4b0502369eb1cad4bcb3a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-05-21 05:46:55</sys_updated_on>
+            <value>EJBCA</value>
+        </sys_choice>
     </sys_choice>
 </record_update>

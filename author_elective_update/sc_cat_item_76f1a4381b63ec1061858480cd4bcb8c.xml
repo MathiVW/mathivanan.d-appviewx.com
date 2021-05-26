@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item">
+    <sc_cat_item action="DELETE">
+        <active>true</active>
+        <availability>on_desktop</availability>
+        <billable>false</billable>
+        <category/>
+        <cost>0</cost>
+        <custom_cart/>
+        <delivery_plan display_value="AppViewX Catalog Item">5997fa271b4e845461858480cd4bcb90</delivery_plan>
+        <delivery_plan_script/>
+        <delivery_time>1970-01-03 00:00:00</delivery_time>
+        <description/>
+        <display_price_property>non_zero</display_price_property>
+        <entitlement_script/>
+        <flow_designer_flow/>
+        <group/>
+        <hide_sp>false</hide_sp>
+        <icon>3d99ac341ba3ec1061858480cd4bcb6f</icon>
+        <ignore_price>true</ignore_price>
+        <image/>
+        <list_price>0</list_price>
+        <location/>
+        <mandatory_attachment>false</mandatory_attachment>
+        <meta/>
+        <mobile_hide_price>false</mobile_hide_price>
+        <mobile_picture/>
+        <mobile_picture_type>use_desktop_picture</mobile_picture_type>
+        <model/>
+        <name>Application Provisioning</name>
+        <no_attachment_v2>false</no_attachment_v2>
+        <no_cart>false</no_cart>
+        <no_cart_v2>false</no_cart_v2>
+        <no_delivery_time_v2>false</no_delivery_time_v2>
+        <no_order>false</no_order>
+        <no_order_now>false</no_order_now>
+        <no_proceed_checkout>false</no_proceed_checkout>
+        <no_quantity>false</no_quantity>
+        <no_quantity_v2>false</no_quantity_v2>
+        <no_search>false</no_search>
+        <no_wishlist_v2>false</no_wishlist_v2>
+        <omit_price>false</omit_price>
+        <order>0</order>
+        <ordered_item_link/>
+        <picture>a5c8e4301ba3ec1061858480cd4bcb97</picture>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=76f1a4381b63ec1061858480cd4bcb8c&amp;sysparm_preview=true", "summary");</preview>
+        <price>0</price>
+        <recurring_frequency/>
+        <recurring_price>0</recurring_price>
+        <request_method/>
+        <roles/>
+        <sc_catalogs/>
+        <sc_ic_item_staging/>
+        <sc_ic_version/>
+        <short_description>Provision Application with DNS, Certificate, LB and Firewall</short_description>
+        <show_variable_help_on_load>false</show_variable_help_on_load>
+        <start_closed>false</start_closed>
+        <sys_class_name>sc_cat_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-13 13:26:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>76f1a4381b63ec1061858480cd4bcb8c</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Application Provisioning</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sc_cat_item_76f1a4381b63ec1061858480cd4bcb8c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-26 11:09:29</sys_updated_on>
+        <template/>
+        <type>item</type>
+        <u_target>Internal</u_target>
+        <use_sc_layout>true</use_sc_layout>
+        <vendor/>
+        <visible_bundle>true</visible_bundle>
+        <visible_guide>true</visible_guide>
+        <visible_standalone>true</visible_standalone>
+        <workflow/>
+    </sc_cat_item>
+    <sys_translated_text action="DELETE" query="documentkey=76f1a4381b63ec1061858480cd4bcb8c"/>
+    <fx_price action="DELETE" query="id=76f1a4381b63ec1061858480cd4bcb8c"/>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="GBP">GBP</currency>
+        <field>price</field>
+        <id>76f1a4381b63ec1061858480cd4bcb8c</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-13 13:26:00</sys_created_on>
+        <sys_id>395268781b63ec1061858480cd4bcbf9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-13 13:26:02</sys_updated_on>
+        <table>sc_cat_item</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>recurring_price</field>
+        <id>76f1a4381b63ec1061858480cd4bcb8c</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-13 13:26:01</sys_created_on>
+        <sys_id>315268781b63ec1061858480cd4bcbfb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-13 13:26:02</sys_updated_on>
+        <table>sc_cat_item</table>
+        <type>calculated</type>
+    </fx_price>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sc_cat_item_76f1a4381b63ec1061858480cd4bcb8c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item"><sc_cat_item action="INSERT_OR_UPDATE"><active>true</active><availability>on_desktop</availability><billable>false</billable><category/><cost>0</cost><custom_cart/><delivery_plan display_value="AppViewX Catalog Item">5997fa271b4e845461858480cd4bcb90</delivery_plan><delivery_plan_script/><delivery_time>1970-01-03 00:00:00</delivery_time><description/><display_price_property>non_zero</display_price_property><entitlement_script/><flow_designer_flow/><group/><hide_sp>false</hide_sp><icon>3d99ac341ba3ec1061858480cd4bcb6f</icon><ignore_price>true</ignore_price><image/><list_price>0</list_price><location/><mandatory_attachment>false</mandatory_attachment><meta/><mobile_hide_price>false</mobile_hide_price><mobile_picture/><mobile_picture_type>use_desktop_picture</mobile_picture_type><model/><name>Application Provisioning</name><no_attachment_v2>false</no_attachment_v2><no_cart>false</no_cart><no_cart_v2>false</no_cart_v2><no_delivery_time_v2>false</no_delivery_time_v2><no_order>false</no_order><no_order_now>false</no_order_now><no_proceed_checkout>false</no_proceed_checkout><no_quantity>false</no_quantity><no_quantity_v2>false</no_quantity_v2><no_search>false</no_search><no_wishlist_v2>false</no_wishlist_v2><omit_price>false</omit_price><order>0</order><ordered_item_link/><picture>a5c8e4301ba3ec1061858480cd4bcb97</picture><preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=76f1a4381b63ec1061858480cd4bcb8c&amp;sysparm_preview=true", "summary");</preview><price>0</price><recurring_frequency/><recurring_price>0</recurring_price><request_method/><roles/><sc_catalogs/><sc_ic_item_staging/><sc_ic_version/><short_description>Provision Application with DNS, Certificate, LB and Firewall</short_description><show_variable_help_on_load>false</show_variable_help_on_load><start_closed>false</start_closed><sys_class_name>sc_cat_item</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-04-13 13:26:00</sys_created_on><sys_customer_update>false</sys_customer_update><sys_id>76f1a4381b63ec1061858480cd4bcb8c</sys_id><sys_mod_count>9</sys_mod_count><sys_name>Application Provisioning</sys_name><sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope><sys_update_name>sc_cat_item_76f1a4381b63ec1061858480cd4bcb8c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-05-26 11:09:29</sys_updated_on><template/><type>item</type><u_target>Internal</u_target><use_sc_layout>true</use_sc_layout><vendor/><visible_bundle>true</visible_bundle><visible_guide>true</visible_guide><visible_standalone>true</visible_standalone><workflow/></sc_cat_item><sys_translated_text action="delete_multiple" query="documentkey=76f1a4381b63ec1061858480cd4bcb8c"/><fx_price action="delete_multiple" query="id=76f1a4381b63ec1061858480cd4bcb8c"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="GBP">GBP</currency><field>price</field><id>76f1a4381b63ec1061858480cd4bcb8c</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-04-13 13:26:00</sys_created_on><sys_id>395268781b63ec1061858480cd4bcbf9</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-04-13 13:26:02</sys_updated_on><table>sc_cat_item</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>recurring_price</field><id>76f1a4381b63ec1061858480cd4bcb8c</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2021-04-13 13:26:01</sys_created_on><sys_id>315268781b63ec1061858480cd4bcbfb</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-04-13 13:26:02</sys_updated_on><table>sc_cat_item</table><type>calculated</type></fx_price></record_update>]]></payload>
+        <payload_hash>-1745393465</payload_hash>
+        <record_name>Application Provisioning</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-26 11:09:30</sys_created_on>
+        <sys_id>117fd1621b903c5061858480cd4bcb58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>179a85d7e2b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-26 11:09:30</sys_updated_on>
+        <type>Catalog Item</type>
+        <update_guid>197fd162e0903c50dc28264bf153d557</update_guid>
+        <update_guid_history>197fd162e0903c50dc28264bf153d557:-1745393465,2f3d287839a3ec10cd0791cc93f7f5e6:-513265139,7dcc287891a3ec103a4b29319144f512:-1294806089,359ca478f2a3ec106df41f83b8442ef9:-831562793,934b24f427a3ec10ee937a154a345844:-50021843,bd9960748aa3ec10c140e39634276098:-1144485997,b199ac34b6a3ec102fafcb590225e173:-1546981495,37096434a0a3ec100673bd8b797e8651:52532984,0fc8ecf018a3ec10ad5b1f8415068c53:-1511056818,69c8acf0b9a3ec109eb96b390637917f:-1831103243,e1c8acf0b3a3ec10bc6cbf69e80e1575:-906272124,4778e4f0c2a3ec10cdb5fce61a5877c6:1722946286,8f78ec3063a3ec10b88b207cdfe12ca7:136065736,5578e4f05ca3ec101545288e3897e428:-582619891,2d186cb006a3ec10dd70976ec53dafdf:836862028,65186cb0d4a3ec10fbccc835afce2ed5:586571579,8e52a0b80c63ec10325678da141fa200:1871119419</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 2021-05-26 16:39:31">397fd1621b903c5061858480cd4bcbdb</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-26 11:09:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sc_cat_item">sc_cat_item</sys_db_object>
+        <sys_id>bbdb3e57e8bb480ea0ff86a12c32be64</sys_id>
+        <sys_metadata>76f1a4381b63ec1061858480cd4bcb8c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Application Provisioning</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sc_cat_item_76f1a4381b63ec1061858480cd4bcb8c</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_76f1a4381b63ec1061858480cd4bcb8c">117fd1621b903c5061858480cd4bcb58</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-26 11:09:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

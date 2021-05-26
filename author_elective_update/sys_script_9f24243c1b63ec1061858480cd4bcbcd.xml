@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">cat_item=76f1a4381b63ec1061858480cd4bcb8c^EQ<item display_table="sc_cat_item" display_value="Application Provisioning" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="76f1a4381b63ec1061858480cd4bcb8c"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>application_provisioning</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var fqdn = current.hierarchical_variables.application_name;
+			var port = current.hierarchical_variables.port;
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+"/avxapi/visualworkflow-submit-request?gwkey=f000ca01&gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload = "{\"payload\":{\"data\":{\"input\":{\"requestData\":[{\"sequenceNo\":1,\"scenario\":\"scenario\",\"fieldInfo\":{\"fqdn\":\"" + fqdn + "\",\"port\":\"" + port + "\",\"name\":\"ServiceNow | " + current.number + "\"}}]},\"task_action\":1},\"header\":{\"workflowName\":\"Application Provisioning\"}}}";
+			r.setRequestBody(payload);
+			r.setHttpTimeout(10000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'application_provisioning';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for catalog request with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Error';
+						gr.script = 'application_provisioning';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+
+				}
+			else 
+				{
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Info';
+						gr.script = 'application_provisioning';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+				}
+				
+			}		
+)(current,previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-13 13:37:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>9f24243c1b63ec1061858480cd4bcbcd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>application_provisioning</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_update_name>sys_script_9f24243c1b63ec1061858480cd4bcbcd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-13 13:44:56</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</application>
+        <file_path/>
+        <instance_id>56a15f5b6f037100ffcca9cc5d3ee498</instance_id>
+        <instance_name>ven01189</instance_name>
+        <name>sys_script_9f24243c1b63ec1061858480cd4bcbcd</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;sc_req_item&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="sc_req_item"&gt;cat_item=76f1a4381b63ec1061858480cd4bcb8c^EQ&lt;item display_table="sc_cat_item" display_value="Application Provisioning" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="76f1a4381b63ec1061858480cd4bcb8c"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;application_provisioning&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current,previous/*null when async*/ ) {
+			var r = new sn_ws.RESTMessageV2();
+			var fqdn = current.hierarchical_variables.application_name;
+			var port = current.hierarchical_variables.port;
+			var url = gs.getProperty("x_avx_appviewx_aut.AppViewX URL");
+			var username = gs.getProperty("x_avx_appviewx_aut.Username");
+			var password = gs.getProperty("x_avx_appviewx_aut.Password");
+			r.setEndpoint(url+"/avxapi/visualworkflow-submit-request?gwkey=f000ca01&amp;gwsource=web");
+			r.setHttpMethod("post");
+			r.setRequestHeader("username", username);
+			r.setRequestHeader("password", password);
+			r.setRequestHeader("Content-Type", "application/json");
+			var payload = "{\"payload\":{\"data\":{\"input\":{\"requestData\":[{\"sequenceNo\":1,\"scenario\":\"scenario\",\"fieldInfo\":{\"fqdn\":\"" + fqdn + "\",\"port\":\"" + port + "\",\"name\":\"ServiceNow | " + current.number + "\"}}]},\"task_action\":1},\"header\":{\"workflowName\":\"Application Provisioning\"}}}";
+			r.setRequestBody(payload);
+			r.setHttpTimeout(10000);
+			var response = r.executeAsync();
+			var responseBody,responseMessage;
+			var gr = new GlideRecord('x_avx_appviewx_aut_logs');
+				gr.initialize();
+				gr.level = 'Info';
+				gr.script = 'application_provisioning';
+				gr.application = 'AppViewX';
+				gr.message = 'Triggerring request API for catalog request with number ' + current.number;
+				gr.insert();
+			if (response.haveError())
+				{
+						responseMessage = response.getErrorMessage();
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Error';
+						gr.script = 'application_provisioning';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + ' ' + responseBody + ' Message: ' + responseMessage ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+
+				}
+			else 
+				{
+						responseBody = response.getBody();
+						gr.initialize();
+						gr.level = 'Info';
+						gr.script = 'application_provisioning';
+						gr.application = 'AppViewX';
+						gr.message = 'Reponse for the request with number ' + current.number + responseBody ;
+						gr.insert();
+						current.variables.request_response = responseBody;
+						current.update();
+				}
+				
+			}		
+)(current,previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-04-13 13:37:30&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;9f24243c1b63ec1061858480cd4bcbcd&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;application_provisioning&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="AppViewX Automation+"&gt;7165e2f81bc808502369eb1cad4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_9f24243c1b63ec1061858480cd4bcbcd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-04-13 13:44:56&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1142363445</payload_hash>
+        <record_name>application_provisioning</record_name>
+        <reverted_from/>
+        <source>8a3efed91b37001061858480cd4bcb4a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-13 13:44:56</sys_created_on>
+        <sys_id>47a6e8301ba3ec1061858480cd4bcbc6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>178cb7a58c40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-13 13:44:56</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>c7a6e8305aa3ec10afa5b071a9cd08c5</update_guid>
+        <update_guid_history>c7a6e8305aa3ec10afa5b071a9cd08c5:-1142363445,eaa560fc8a63ec101a6053545dd1ce65:780247599,c625e0bce963ec10a5ff18449408b172:1018138638,9af46c3cfa63ec1064b098ffd9e326f3:332326840</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-26 11:09:57</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>1c6a19612fbd465890f2f646713fff10</sys_id>
+        <sys_metadata>9f24243c1b63ec1061858480cd4bcbcd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>application_provisioning</sys_name>
+        <sys_package display_value="AppViewX Automation+" source="x_avx_appviewx_aut">7165e2f81bc808502369eb1cad4bcbe0</sys_package>
+        <sys_parent display_value="Requested Item">56c0ff800f300200c3e6cd8ce1050e2f</sys_parent>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="AppViewX Automation+">7165e2f81bc808502369eb1cad4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">74c257f6cc8c4ca6b194661e148ee244</sys_scope_delete>
+        <sys_update_name>sys_script_9f24243c1b63ec1061858480cd4bcbcd</sys_update_name>
+        <sys_update_version display_value="sys_script_9f24243c1b63ec1061858480cd4bcbcd">47a6e8301ba3ec1061858480cd4bcbc6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-26 11:09:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
